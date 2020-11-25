@@ -38,5 +38,6 @@ So, the first to start with is the macro .Rmd file. The one where all other file
 
 To do so, open Rstudio and create a new .Rmd file by clicking on the blank sheet with the green plus one the left-hand side of the interface. 
 
-<img src="/img/open_md.png" alt="opening rmarkdown" width="300">
+<img src="/img/open_md.png" alt="opening rmarkdown">
+
 
