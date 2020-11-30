@@ -104,4 +104,37 @@ It's time to add the *title* of your dissertation!
 {\bf COMPARISON OF TOP-DOWN AND BOTTOM-UP APPROACHES ON SPECIFIC LEAF AREA PATTERNS, \\AT GLOBAL, LATITUDINAL, AND BIOME SCALES}
 ````
 
-The addition 
+As you might have figured, adding the function \Large will increase the font of whatever writing you add undearneath it, and adding \doublespacing will double the space between lines of text. By wrapping a specific part of your text within curly brackets and adding the function \bf at the start you will specify that only that part of the text will need be in bold font. The university guidelines specify to have the title all capitalised. And finally, the double `\\` sign will make the text go onto a new line (just like \n in a string in R code!).
+
+To finish the front page we need to add author, degree and date! 
+
+````
+\vspace{1 cm}
+
+\normalsize
+\singlespacing
+By 
+
+\vspace{0.5 cm}
+
+\Large
+
+{\bf ANNA CHIRUMBOLO}
+
+\vspace{1.5 cm}
+
+in partial fulfilment of the requirement \\for the degree of BSc with Honours \\in Ecological and Environmental Sciences 
+
+\vspace{1.5 cm}
+
+\normalsize
+May 2020
+````
+
+Again, as a matter of formatting guidance, I added some specified spacing in between the various lines of text that follow the thesis title. By adding \normalsize you input the .Rmd file to go back to a 'normal' font, since the last input was \Large. 
+
+**Remember** that rmarkdown will remember the last formatting input you gave it, and to change it for the following lines you need to specify the new function!
+
+We have created the front page! Knit it to check what it looks like: 
+
+<img src="/img/front_page_pdf.png" alt="front page pdf output">
