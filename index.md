@@ -79,4 +79,29 @@ In between the curly brackets of the code chunk, you can set all the characteris
 
 Knitr is the only most important package used in Rmarkdown, to manipulate code within code chunks. **INSERT LINLK TO KNITR PAGE?** You can retrieve the image of the university logo with the function include_graphics().
 
+Now we need to add the name of the university and that of the department. We are going to do so 1cm distant from the logo.
 
+````
+\vspace{1cm}
+
+\Large 
+{\bf The University Of Edinburgh}
+
+\Large
+{\bf School Of Geosciences}
+````
+
+You recall the \vspace function from above, but now there's also \Large, which sets a standard for the text that comes later to be output with a larger font, and \bf which sets the text within curly brackets to **bold**.
+
+It's time to add the *title* of your dissertation! 
+
+````
+\vspace{1cm}
+
+\Large
+
+\doublespacing
+{\bf COMPARISON OF TOP-DOWN AND BOTTOM-UP APPROACHES ON SPECIFIC LEAF AREA PATTERNS, \\AT GLOBAL, LATITUDINAL, AND BIOME SCALES}
+````
+
+The addition 
