@@ -138,3 +138,52 @@ Again, as a matter of formatting guidance, I added some specified spacing in bet
 We have created the front page! Knit it to check what it looks like: 
 
 <img src="/img/front_page_pdf.png" alt="front page pdf output">
+
+
+<a name="section1"></a>
+
+## 2. Create the different sections of your dissertation.
+
+
+Looking good! The front page of the dissertation is ready to go. Now we need to add the different sections of the thesis, which will be separate .Rmd files, as previously explained. 
+
+These other .rmd files will behave as 'children' for the main .rmd file, which will be embedded within the main .rmd where the front page is. 
+
+To explicitly insert new elements into a new pdf page, we have to specify the 
+````
+\newpage
+````
+function after \end{centering}. 
+
+After the new page, we'll start placing the "child" document for the abstract. Doing so it's very simple, add a code chunk and specify the following feature: 
+
+````
+```{r child = 'abstract.Rmd'}
+```
+`````
+
+This code chunk links to another file "abstract.Rmd", and will transpose the content of that file within that file. 
+
+For that to happen, we need to create the new "abstract.Rmd", by following the same steps to create the first one with the front page. Head back to step 1 if you need a re-fresher on how to do that. 
+
+````
+\normalsize
+{\bf Abstract}
+
+\spacing{1.5}
+
+(the spacing is set to 1.5)
+
+no more than 250 words for the abstract
+
+- a description of the research question/knowledge gap – what we know and what we don’t know
+- how your research has attempted to fill this gap
+- a brief description of the methods
+- brief results
+- key conclusions that put the research into a larger context
+````
+
+You can paste this text in the "abstract" file for the moment. Guidelines require 1.5 spacing specific to the Abstract section. The text refers to what your content should be, and hopefully it can be useful to you once you need to write it!
+
+You can knit the main file to pdf (which I named "dissertation.Rmd") to check out the output. 
+
