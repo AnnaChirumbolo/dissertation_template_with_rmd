@@ -23,15 +23,16 @@
 
 #### <a href="#section2"> 2. Create the different sections of your dissertation.</a>
 
-<a href="#subsect3"> a) Add or create tables. </a>
+<a href="#subsect3"> a) Tables. </a>
 
-<a href="#subsect4"> b) Add or create figures. </a>
+<a href="#subsect4"> b) Figures. </a>
 
-<a href="#subsect5"> c) Add or create code. </a>
+<a href="#subsect5"> c) Code. </a>
 
-#### <a href="#section6"> 6. Add raw data in the Appendidx.</a>
-#### <a href="#section7"> 7. Some final adjustments.</a>
-#### <a href="#section8"> 8. Let's merge!</a>
+#### <a href="#section3"> 3. The Appendidx.</a>
+#### <a href="#section4"> 4. Some final adjustments.</a>
+#### <a href="#section5"> 5. Let's merge!</a>
+#### <a href="#section6"> 6. Tips. </a>
 
 <a name="section1"></a>
 
