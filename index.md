@@ -247,5 +247,5 @@ However, remember to make sure you've created the .Rmd files that you link to yo
 
 To speed things up a little, I have created the files already and you can check them out from the main folder. Knitting the document now, you should see how the content from each has been pasted into one main document.
 
-It is unpractical to show here in one image, but you should now have a 10-page document, with each section of the dissertation on a new page. The structure is coming along nicely! Well done!
+It is unpractical to show here as one image, but you should now have a 10-page document, with each section of the dissertation on a new page. The structure is coming along nicely! Well done!
 
