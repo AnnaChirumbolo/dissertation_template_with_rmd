@@ -187,9 +187,9 @@ The title "Abstract" is centered and bold, while the spacing in between lines of
 
 You can knit the document to check out the output.
 
-<img src="/img/abstract.png" alt="abstract" width = 49%>
+<img src="/img/abstract.png" alt="abstract">
 
-<img src="/img/abstract_output.png" alt="abstract output" width=49%>
+<img src="/img/abstract_output.png" alt="abstract output">
 
 <a name="section2"></a>
 
