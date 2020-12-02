@@ -245,7 +245,7 @@ As you can see, we've just added a code chunk for each section of your dissertat
 
 However, remember to make sure you've created the .Rmd files that you link to your main file, and check the spelling! As you can imagine, non-existing or mispelled files which have been included in the main document will give you error. 
 
-To speed things up a little, I have created this files already and you can find them in the folder. Knitting the document now, you should see how the content from each has been pasted into one main document.
+To speed things up a little, I have created the files already and you can check them out from the main folder. Knitting the document now, you should see how the content from each has been pasted into one main document.
 
 It is unpractical to show here in one image, but you should now have a 10-page document, with each section of the dissertation on a new page. The structure is coming along nicely! Well done!
 
