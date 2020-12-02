@@ -17,9 +17,9 @@
 ### Steps:
 
 #### <a href="#section1"> 1. The "main" Rmarkdown document.</a>
-<a href="#subsect1">a) The front page</a>
+&nbsp;<a href="#subsect1">a) The front page</a>
 
-<a href="#subsect2">b) Abstract</a>
+&nbsp;<a href="#subsect2">b) Abstract</a>
 
 #### <a href="#section2"> 2. Create the different sections of your dissertation.</a>
 
