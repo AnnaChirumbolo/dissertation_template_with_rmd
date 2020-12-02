@@ -17,6 +17,10 @@
 ### Steps:
 
 #### <a href="#section1"> 1. The "main" Rmarkdown document.</a>
+<a href="#subsect1"><sub> a) The front page </sub></a>
+
+<a href="#subsect1"><sub> b) Abstract </sub></a>
+
 #### <a href="#section2"> 2. Create the different sections of your dissertation.</a>
 #### <a href="#section3"> 3. Add or create tables.</a>
 #### <a href="#section4"> 4. Add or create figures.</a>
@@ -49,6 +53,10 @@ You will see at the top a section called YAML header, delimited by three hyphens
 As you can see, the new .Rmd file provides a default structure already written, quickly explaining the file and showing code chunks that can be embedded in it (the grey banners). Erase the text, as we are going to be writing our own, but keep the YAML header (IT'S ESSENTIAL!) and also the first grey banner or code chunk. Your file should look like this: 
 
 <img src="/img/clean_rmd.png" alt="clean rmd file">
+
+<a name="subsect1"></a>
+
+### a) The front page
 
 The School of Geosciences has a standard formatting rules for the undergraduate dissertation document, and we are going to set the file according to them (these are as of 2020, if they have changed edit them accordingly). 
 
@@ -140,39 +148,30 @@ We have created the front page! Knit it to check what it looks like:
 <img src="/img/front_page_pdf.png" alt="front page pdf output">
 
 
-<a name="section1"></a>
+<a name="subsect2"></a>
 
-## 2. Create the different sections of your dissertation.
+### b) Abstract
 
+We can add the Abstract in the next page, by specifying this LaTex command
 
-Looking good! The front page of the dissertation is ready to go. Now we need to add the different sections of the thesis, which will be separate .Rmd files, as previously explained. 
-
-These other .rmd files will behave as 'children' for the main .rmd file, which will be embedded within the main .rmd where the front page is. 
-
-To explicitly insert new elements into a new pdf page, we have to specify the 
 ````
 \newpage
 ````
-function after \end{centering}. 
 
-After the new page, we'll start placing the "child" document for the abstract. Doing so it's very simple, add a code chunk and specify the following feature: 
+Anything you'll write or insert after this specification will appear on a new page. This way you have control over the distribution of your content. 
 
-````
-```{r child = 'abstract.Rmd'}
-```
-`````
-
-This code chunk links to another file "abstract.Rmd", and will transpose the content of that file within that file. 
-
-For that to happen, we need to create the new "abstract.Rmd", by following the same steps to create the first one with the front page. Head back to step 1 if you need a re-fresher on how to do that. 
+In the new page, insert the following
 
 ````
-\normalsize
+\begin{centering}
+
 {\bf Abstract}
+
+\end{centering}
 
 \spacing{1.5}
 
-(the spacing is set to 1.5)
+(the spacing is set to 1.5) 
 
 no more than 250 words for the abstract
 
@@ -183,7 +182,17 @@ no more than 250 words for the abstract
 - key conclusions that put the research into a larger context
 ````
 
-You can paste this text in the "abstract" file for the moment. Guidelines require 1.5 spacing specific to the Abstract section. The text refers to what your content should be, and hopefully it can be useful to you once you need to write it!
+The title "Abstract" is centered and bold, while the spacing in between lines of text is set to 1.5. As text I have included main guidelines for writing an abstract, which should come useful to you when writing it. 
 
-You can knit the main file to pdf (which I named "dissertation.Rmd") to check out the output. 
+You can knit the document to check out the output.
+
+<img src="/img/abstract.png" alt="abstract" width = 499>
+
+<img src="/img/abstract_output.png" alt="abstract output" width=499>
+
+<a name="section2"></a>
+
+## 2. Create the different sections of your dissertation.
+
+Looking good! The front page of the dissertation is ready, and so is your Abstract. Now we need to add the different sections of the thesis, which we'll create on separate .Rmd files. These .rmd files will behave as 'children' to the main file, which we have knitted so far.
 
