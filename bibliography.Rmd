@@ -1,0 +1,10 @@
+---
+title: ''
+output: pdf_document
+---
+
+# Bibliography 
+
+Write your references here.
+
+Unfortunately there is no way to synchronise the text with the references on Rmarkdown. I would suggest you write this file when you are sure it is 100% finalised and ready to be submitted. So that you can just paste in your text and your bibliography without any changes needed. 

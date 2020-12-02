@@ -2,7 +2,7 @@
 
 ## Write your dissertation in Rmarkdown!
 
-**Created by Anna** 
+*Created by Anna*
 
 ### Tutorial Aims
 
@@ -12,7 +12,7 @@
 
 3. Glancing at using LaTex for embellishing the pdf output and functioning as a supplement to Markdown; 
 
-4. Becoming familiar with `knitr`and `kableExtra` packages. 
+4. Becoming familiar with `knitr` and `kableExtra` packages. 
 
 ### Steps:
 
@@ -26,7 +26,8 @@
 #### <a href="#section4"> 4. Add or create figures.</a>
 #### <a href="#section5"> 5. Add or create code.</a>
 #### <a href="#section6"> 6. Add raw data in the Appendidx.</a>
-#### <a href="#section7"> 7. Let's merge!</a>
+#### <a href="#section7"> 7. Some final adjustments.</a>
+#### <a href="#section8"> 8. Let's merge!</a>
 
 <a name="section1"></a>
 
@@ -240,5 +241,11 @@ In the main document, paste the following
 ```
 ````
 
-As you can see, you've just added a code chunk for each section of your dissertation. The "child" feature of the code chunk links the main .Rmd document to another one. This means that once you'll knit from the same main document, the content from each of the child documents will be pasted and marged into one, final pdf. Cool, uh! And super easy. 
+As you can see, we've just added a code chunk for each section of your dissertation. The "child" feature of the code chunk links the main .Rmd document to another one. This means that once you'll knit from the same main document, the content from each of the child documents will be pasted and marged into one, final pdf. Cool, uh! And super easy. 
+
+However, remember to make sure you've created the .Rmd files that you link to your main file, and check the spelling! As you can image, non-existing or mispelled files which have been included in the main document will give you error. 
+
+To speed things up a little, I have created this files already and you can find them in the folder. Knitting the document now, you should see how the content from each has been pasted into one main document.
+
+It is unpractical to show here in one image, but you should now have a 10-page document, with each section of the dissertation on a new page. The structure is coming along nicely! Well done!
 
