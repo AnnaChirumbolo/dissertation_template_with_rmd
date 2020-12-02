@@ -186,13 +186,13 @@ The title "Abstract" is centered and bold, while the spacing in between lines of
 
 You can knit the document to check out the output.
 
-<img src="/img/abstract.png" alt="abstract" width = 499>
+<img src="/img/abstract.png" alt="abstract" width = 49%>
 
-<img src="/img/abstract_output.png" alt="abstract output" width=499>
+<img src="/img/abstract_output.png" alt="abstract output" width=49%>
 
 <a name="section2"></a>
 
 ## 2. Create the different sections of your dissertation.
 
-Looking good! The front page of the dissertation is ready, and so is your Abstract. Now we need to add the different sections of the thesis, which we'll create on separate .Rmd files. These .rmd files will behave as 'children' to the main file, which we have knitted so far.
+Looking good! The front page of the dissertation is ready, and so is your abstract. Now we need to add the different sections of the thesis, which we'll create on separate .Rmd files. These .rmd files will behave as 'children' to the main file, which we have knitted so far.
 
