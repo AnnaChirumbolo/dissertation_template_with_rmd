@@ -243,7 +243,7 @@ In the main document, paste the following
 
 As you can see, we've just added a code chunk for each section of your dissertation. The "child" feature of the code chunk links the main .Rmd document to another one. This means that once you'll knit from the same main document, the content from each of the child documents will be pasted and marged into one, final pdf. Cool, uh! And super easy. 
 
-However, remember to make sure you've created the .Rmd files that you link to your main file, and check the spelling! As you can image, non-existing or mispelled files which have been included in the main document will give you error. 
+However, remember to make sure you've created the .Rmd files that you link to your main file, and check the spelling! As you can imagine, non-existing or mispelled files which have been included in the main document will give you error. 
 
 To speed things up a little, I have created this files already and you can find them in the folder. Knitting the document now, you should see how the content from each has been pasted into one main document.
 
