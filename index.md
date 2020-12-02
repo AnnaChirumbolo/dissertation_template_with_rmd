@@ -17,7 +17,7 @@
 ### Steps:
 
 #### <a href="#section1"> 1. The "main" Rmarkdown document.</a>
-<a href="#subsect1"><sub> a) The front page </sub></a>
+<a href="#subsect1">< a) The front page </a>
 
 <a href="#subsect1"><sub> b) Abstract </sub></a>
 
