@@ -196,3 +196,49 @@ You can knit the document to check out the output.
 
 Looking good! The front page of the dissertation is ready, and so is your abstract. Now we need to add the different sections of the thesis, which we'll create on separate .Rmd files. These .rmd files will behave as 'children' to the main file, which we have knitted so far.
 
+In the main document, paste the following
+
+````
+\newpage
+
+```{r acknowledgments, child='acknowledgments.Rmd'}
+```
+
+\newpage
+
+```{r intro, child = 'introduction.Rmd'}
+```
+
+\newpage
+
+```{r methods, child = 'methods.Rmd'}
+```
+
+\newpage
+
+```{r results, child = 'results.Rmd'}
+```
+
+\newpage 
+
+```{r discussion, child = 'discussion.Rmd'}
+```
+
+\newpage 
+
+```{r conclusion, child = 'conclusion.Rmd'}
+```
+
+\newpage 
+
+```{r biblio, child = 'bibliography.Rmd'}
+```
+
+\newpage 
+
+```{r appendix, child = 'appendix.Rmd'}
+```
+````
+
+As you can see, you've just added a code chunk for each section of your dissertation. The "child" feature of the code chunk links the main .Rmd document to another one. This means that once you'll knit from the same main document, the content from each of the child documents will be pasted and marged into one, final pdf. Cool, uh! And super easy. 
+
