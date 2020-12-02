@@ -23,11 +23,11 @@
 
 #### <a href="#section2"> 2. Create the different sections of your dissertation.</a>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subsect3"> a) Tables. </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subsect3"> a) Add tables. </a>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subsect4"> b) Figures. </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subsect4"> b) Add figures. </a>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subsect5"> c) Code. </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subsect5"> c) Add code. </a>
 
 #### <a href="#section3"> 3. The Appendidx.</a>
 #### <a href="#section4"> 4. Some final adjustments.</a>
@@ -253,4 +253,8 @@ However, remember to make sure you've created the .Rmd files that you link to yo
 To speed things up a little, I have created the files already and you can check them out from the main folder. Knitting the document now, you should see how the content from each has been pasted into one main document.
 
 It is unpractical to show here as one image, but you should now have a 10-page document, with each section of the dissertation on a new page. The structure is coming along nicely! Well done!
+
+<a href="subsect3"></a>
+
+### a) Add tables
 
