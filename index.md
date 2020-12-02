@@ -19,15 +19,15 @@
 #### <a href="#section1"> 1. The "main" Rmarkdown document.</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subsect1">a) The front page</a>
 
-&nbsp;<a href="#subsect2">b) Abstract</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subsect2">b) Abstract</a>
 
 #### <a href="#section2"> 2. Create the different sections of your dissertation.</a>
 
-<a href="#subsect3"> a) Tables. </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subsect3"> a) Tables. </a>
 
-<a href="#subsect4"> b) Figures. </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subsect4"> b) Figures. </a>
 
-<a href="#subsect5"> c) Code. </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subsect5"> c) Code. </a>
 
 #### <a href="#section3"> 3. The Appendidx.</a>
 #### <a href="#section4"> 4. Some final adjustments.</a>
