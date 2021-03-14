@@ -19,6 +19,7 @@
 <a href="#section1"> 1. The "main" Rmarkdown document.</a>
 
 <a href="#subsect1"><sub>a) The front page.</sub></a>
+
 <a href="#subsect2"><sub>b) The abstract.</sub></a>
 
 <a href="#toc"> 2. Table Of Contents (TOC).</a>
