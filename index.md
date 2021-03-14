@@ -16,20 +16,20 @@
 
 ### Steps:
 
-* <a href="#section1"> 1. The "main" Rmarkdown document.</a>
+<a href="#section1"> 1. The "main" Rmarkdown document.</a>
 
-* <a href="#subsect1">a) The front page.</a>
-* <a href="#subsect2">b) The abstract.</a>
+<a href="#subsect1"><sub>a) The front page.</sub></a>
+<a href="#subsect2"><sub>b) The abstract.</sub></a>
 
-* <a href="#toc"> 2. Table Of Contents (TOC).</a>
+<a href="#toc"> 2. Table Of Contents (TOC).</a>
 
-* <a href="#section2"> 3. "Child" documents.</a>
+<a href="#section2"> 3. "Child" documents.</a>
 
-* <a href="#subsect3"> Example: the Appendix.</a>
+<a href="#subsect3"> Example: the Appendix.</a>
 
-*  <a href="#section4"> 4. Let's merge!</a>
+<a href="#section4"> 4. Let's merge!</a>
 
-* <a href="#section5"> 5. Final tips. </a>
+<a href="#section5"> 5. Final tips. </a>
 
 <a name="section1"></a>
 
