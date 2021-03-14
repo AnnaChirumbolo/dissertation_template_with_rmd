@@ -506,9 +506,7 @@ As you can see, we are leaving the code chunk empty, and writing exclusively wit
 
 The function `purl()` takes the source code from the main document (specified by the file path `'./file.Rmd'`) and lists it within a single chunk that is not run (`eval=F`).
 
-A long list of code lines should appear within the code chunk and it corresponds to the code used in appendix.Rmd!
-
-**NEED TO INSERT SCREENSHOT OF THE CODE APPEARING FROM THE APPENDIX!!**
+A list of code lines should appear within the code chunk and it corresponds to the code we have just written in appendix.Rmd!
 
 <a name="section 4"></a>
 
@@ -526,7 +524,7 @@ Here are some final tips which I found to be **essential** when I wrote my own d
 
 1. I have not talked about in detail in this tutorial, but the **Abbreviations** section can be very useful in your dissertation if you need to talk about many variables and features and need a way to speed things up (and save word count); 
 
-2. Make sure you have [tinytex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html) installed to be able to **create pdf documents from rmarkdown**. Without it, it just won't work; 
+2. Make sure you have [LaTex](https://www.latex-project.org/get/) and [tinytex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html) installed to be able to **create pdf documents from rmarkdown**. Without it, it just won't work; 
 
 3. **NEVER** write your content directly onto Rmarkdown! As much as it might seem faster, Rmarkdown does not provide a spell checker by default, and you might take longer than expected in ultimating and finalising your drafts. **Plant the strcuture, the code that you want to include, the layout of each section to be written on Rmd**, but **always** have the text saved and written on a word document first. It is much easier and quicker to paste in your content, once you're 100% sure it is ready for submission; 
 
