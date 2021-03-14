@@ -32,6 +32,9 @@
 
 <a href="#section5"> 5. Final tips. </a>
 
+--------------------------------------------
+
+
 <a name="section1"></a>
 
 ## 1. The "main" Rmarkdown document. 
@@ -380,7 +383,7 @@ To speed things up a little, I have created the files already and you can see th
 
 You should now have a 10-page document, with each section of the dissertation appearing on a new page. The structure is coming along nicely! Well done!
 
-<a href="subsect3"></a>
+<a name="subsect3"></a>
 
 ### Example: the appendix. 
 
@@ -509,7 +512,7 @@ The function `purl()` takes the source code from the main document (specified by
 
 A list of code lines should appear within the code chunk and it corresponds to the code we have just written in appendix.Rmd!
 
-<a name="section 4"></a>
+<a name="section4"></a>
 
 ## 4. Let's Merge! 
 
@@ -517,7 +520,7 @@ Make sure **that all the text we've written so far is spelled correctly**, and b
 
 Now you can fill the sections in with your own content and your personal touch. 
 
-<a name="section 5"></a>
+<a name="section5"></a>
 
 ## 5. Final tips. 
 
