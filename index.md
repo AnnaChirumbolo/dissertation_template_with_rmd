@@ -21,15 +21,15 @@
 * <a href="#subsect1">a) The front page.</a>
 * <a href="#subsect2">b) The abstract.</a>
 
-* <a href="#section2"> 2. "Child" documents.</a>
+* <a href="#toc"> 2. Table Of Contents (TOC).</a>
+
+* <a href="#section2"> 3. "Child" documents.</a>
 
 * <a href="#subsect3"> Example: the Appendix.</a>
 
-* <a href="#section4"> 4. Some final adjustments.</a>
+*  <a href="#section4"> 4. Let's merge!</a>
 
-*  <a href="#section5"> 5. Let's merge!</a>
-
-* <a href="#section6"> 6. Final tips. </a>
+* <a href="#section5"> 5. Final tips. </a>
 
 <a name="section1"></a>
 
@@ -55,17 +55,73 @@ Once you have created a new Rmarkdown document, leave title and author blank (yo
 
 <img width="1280" alt="rmd_opened" src="https://user-images.githubusercontent.com/43357858/111072170-a40cbd00-84d9-11eb-9f9f-c34388939c3e.png">
 
-You will see at the top a section called YAML header, delimited by three hyphens (---). The header embeds the information that you have just given (blank for the title, no author and pdf_document as your desired output), and allows you to set the rules that are going to be applied throught the document (as well as the **linked** documents). This header will not show in the output. 
+You will see at the top a section called **YAML header**, delimited by three hyphens (---). The header embeds the information that you have just given (blank for the title, no author and pdf_document as your desired output), and allows you to set the rules that are going to be applied throught the document (as well as the **linked** documents). This header will not show in the output. 
 
-Erase the text, as we are going to be writing our own, but keep the YAML header (IT'S ESSENTIAL!) and also the first grey banner or **code chunk**. Your file should look like this: 
+The School of Geosciences provides standard formatting rules for the undergraduate dissertation document, and we are going to set the file according to them (these are as of 2020, if they have changed edit them accordingly). 
 
-<img width="1280" alt="clean_rmd" src="https://user-images.githubusercontent.com/43357858/111072215-df0ef080-84d9-11eb-9501-dc599a64cafd.png">
+Now we need to add more details and specifications to our **YAML header** to apply to the entire to document (and its 'child' documents). 
+
+````
+---
+title: " "
+output:
+  pdf_document:
+    number_sections: TRUE
+geometry: "left = 2.5cm, right = 2cm, top = 2cm, bottom = 2cm"
+fontsize: 11pt
+header-includes:
+  - \usepackage{float}
+  - \usepackage{sectsty}
+  - \usepackage{paralist}
+  - \usepackage{setspace}\spacing{1.5}
+  - \usepackage{fancyhdr}
+  - \usepackage{lastpage}
+  - \usepackage{dcolumn}
+---
+````
+
+- **number_sections: TRUE** will automatically create sections that ordered according to the type of header (main, sub-, etc.); 
+
+- **geometry**: sets margin sides for pdf output (according to School of Geosciences guidelines); 
+
+- **fontsize**: sets entire font throughout document to be 11 pt. You can change that in the file for specific sections of your choosing; 
+
+- **header-includes**: allows you to specify all the **LaTex** packages you are going to need in your file. In this way, you can keep all the specifics inside your main .Rmd document and they **will apply to the child documents, too**. 
+
+The packages include: 
+
+- [float](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/float/float.pdf): improves the interface for defining *floating objects*, like figures and tables; 
+
+- [sectsty](http://www.ctex.org/documents/packages/layout/sectsty.pdf): helps you change the style of any or all LaTex *sectional headers* in the article, book or report classes. Examples include the addition of rules above or below a section title; 
+
+- [paralist](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/paralist/paralist.pdf): provides enumerate and itemise environments that can be used within paragraphs to format the items as either *running text* or as *separate paragraphs with preceding number or symbol*; 
+
+- [setspace](https://www.ctan.org/pkg/setspace): provides support for *setting spacing between lines* in a document. Options include \singlespacing, \onehalfspacing and \doublespacing commands (which we'll see below). As you can see, I've already set the general rule to be 1.5 spacing (as per university guidelines); 
+
+- [fancyhdr](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/fancyhdr/fancyhdr.pdf): the package provides extensive facilities, both for *constructing headers and footers, and for controlling their use*; 
+
+- [lastpage](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/lastpage/lastpage.pdf): *references the number of pages *in your LaTex document through the introduction of a new label; 
+
+- [dcolumn](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/required/tools/dcolumn.pdf): makes use of the "array" package to define a *"D" column* for use in tabular environments. 
+
+
+Below the first code chunk (already present from the start of the document), write the following. 
+
+````
+\allsectionsfont{\centering}
+\subsectionfont{\raggedright}
+\subsubsectionfont{\raggedright}
+
+\pagenumbering{gobble} 
+````
+
+The **\allsectionsfont** command specifies changes to your header font - in this case to have them centered. Instead, we have specified **\subsectionfont** and **\subsubsectionfont** (for sub-headers) to be ragged right.  
+
+**\pagenumbering{gobble}**, instead, **does not print any page number**, and this is ideal for the moment, as we are about to create the front page, which does not require one. Remember though, **gobble** option in the **pagenumbering** command has the side effect to reset the page number to 1 - so it is unlikely to be helpful **other than at the beginning of your document!**
 
 <a name="subsect1"></a>
 
 ### a) The front page
-
-The School of Geosciences provides standard formatting rules for the undergraduate dissertation document, and we are going to set the file according to them (these are as of 2020, if they have changed edit them accordingly). 
 
 Let's create the **front page** of the dissertation. It's an important one, as it's going to make the first great impression of your work!
 
@@ -152,6 +208,8 @@ It's time to add the *title* of your dissertation! I have written mine below jus
 
 As you might have figured, adding \doublespacing will double the space between lines of text. By wrapping a specific part of your text within curly brackets and adding the function \bf at the start, you will specify that **only** that part of the text will need be in bold. 
 
+This link explains in more detail the different ways to do [simple text formatting](https://www.overleaf.com/learn/latex/Bold,_italics_and_underlining).
+
 The university guidelines specify to have the title **all capitalised**. And finally, the `\\` sign will break the text onto a new line (just like \n for a string in R code!).
 
 To finish up the front page we need to add author, degree and date! 
@@ -181,7 +239,8 @@ mm yy
 
 Again, as a matter of formatting guidance, I added some specified spacing in between the lines of text that follow the thesis title. 
 
-**Remember** that rmarkdown will remember any input you last gave it, and to change it agaom for the following lines you need to specify the new function!
+**Remember** that rmarkdown will remember any input you last gave it, and to change it again need to specify the new function for the lines of text that follow!
+
 In fact, by changing the font back to \normalsize you input the .Rmd file to go back to a 'normal' font (12 pt), since the last input you gave it was to be \Large. 
 
 We have created the front page, which should look like this. 
@@ -196,11 +255,15 @@ We can add the Abstract on a new page, by specifying this LaTex command (remembe
 
 ````
 \newpage
+
+\pagenumbering{gobble} 
 ````
 
 Anything you'll write or insert after this command will appear on a new page. This way you have control over the distribution of your content. 
 
-In the new page, write the following
+You remember the pagenumbering command from before. It does not let any page number to be displayed in the pdf output. 
+
+In the new page, write the following:
 
 ````
 \begin{centering}
@@ -230,9 +293,33 @@ I have included main guidelines for writing an abstract, which should come usefu
 
 <img width="1083" alt="abstract_output" src="https://user-images.githubusercontent.com/43357858/111073008-54c88b80-84dd-11eb-8f86-614a8f07a82d.png">
 
+
+<a name="toc"></a>
+
+## 2. Table Of Contents (TOC). 
+
+One very important section is the TOC. It is typically located after the abstract (and abbreviations section, which is **optional, but very useful**). 
+
+Below, I have specified the syntax for including the toc, which is very straightforward.
+
+````
+\pagenumbering{roman} 
+
+\newpage
+
+\centering
+\raggedright
+\newpage
+\tableofcontents
+````
+
+I have included the **roman** option in the **pagenumbering** command, telling the document that from now on, it can start numering the pages, roman way. 
+
+The remaining syntax prepares a new page for writing the toc - it is created automatically, and will identify headers and subheaders according to how you have written them (see [markdown syntax](https://github.com/tchapi/markdown-cheatsheet) for headers and subheaders). 
+
 <a name="section2"></a>
 
-## 2. "Child" documents.
+## 3. "Child" documents.
 
 Looking good! 
 
@@ -309,8 +396,6 @@ However, there are some general rules that apply to the appendix section. Append
 4. Appendices are also included in the table of contents at the beginning of the main document. 
 
 We are going to follow these formatting rules and we are going to explore three types of appendices: additional tables, additional figures and code (used for programming during your research). 
-
-#### A) Additional tables
 
 Opening the appendix.Rmd document, you will see it already contains some text I had added. 
 
@@ -423,5 +508,47 @@ The function `purl()` takes the source code from the main document (specified by
 
 A long list of code lines should appear within the code chunk and it corresponds to the code used in appendix.Rmd!
 
+**NEED TO INSERT SCREENSHOT OF THE CODE APPEARING FROM THE APPENDIX!!**
+
+<a name="section 4"></a>
+
+## 4. Let's Merge! 
+
+Make sure **that all the text we've written so far is spelled correctly**, and be ready to **knit the main document**!
+
+Now you can fill the sections in with your own content and your personal touch. 
+
+<a name="section 5"></a>
+
+## 5. Final tips. 
+
+Here are some final tips which I found to be **essential** when I wrote my own dissertation on Rmarkdown. 
+
+1. I have not talked about in detail in this tutorial, but the **Abbreviations** section can be very useful in your dissertation if you need to talk about many variables and features and need a way to speed things up (and save word count); 
+
+2. Make sure you have [tinytex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html) installed to be able to **create pdf documents from rmarkdown**. Without it, it just won't work; 
+
+3. **NEVER** write your content directly onto Rmarkdown! As much as it might seem faster, Rmarkdown does not provide a spell checker by default, and you might take longer than expected in ultimating and finalising your drafts. **Plant the strcuture, the code that you want to include, the layout of each section to be written on Rmd**, but **always** have the text saved and written on a word document first. It is much easier and quicker to paste in your content, once you're 100% sure it is ready for submission; 
+
+4. **Before** knitting the main document, have a look at it, once, twice, three, four times... and more! This document will present many sections, and the smallest spelling mistake might crash your whole work. Since it's going to be a large document, knit it a few times, only when necessary, and definitely when you're sure to be priniting your final pdf; 
+
+5. **Don't submit last minute!!!** This rule would apply to any submission scenario, really. However, take your time to check for errors and debugging, if need be. You don't want to find yourself at the end with errors that won't allow you knit your pdf and submit your work on time. 
 
 
+## Resources 
+
+* [Install tinytex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html)
+
+* [Rmarkdown cheetsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+
+* [LaTex syntax](https://www.overleaf.com/learn/latex/Commands)
+
+* [Html syntax](https://www.w3schools.com/html/html5_syntax.asp)
+
+* [Knitr package](https://yihui.org/knitr/)
+
+* [kableExtra package](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
+
+* [ViridisLite package](https://cran.r-project.org/web/packages/viridisLite/viridisLite.pdf)
+
+* [Pdf document (Rmarkdown)](https://bookdown.org/yihui/rmarkdown/pdf-document.html)
