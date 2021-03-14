@@ -495,6 +495,9 @@ include_graphics("img/meant_plot.png")
 
 - <sub>`The 'include_graphics()` function is part of the 'knitr' package, and it allows to embed external images in document format supported by 'knitr'.</sub>
 
+![meant_plot](https://user-images.githubusercontent.com/43357858/111078338-35d5f380-84f5-11eb-9e81-58ab4ff72e7e.png)
+
+
 Finally, **Appendix C: code**. Let's imagine we want to use our last appendix to include all the code we used to carry out our data cleaning, the statistical analyses, the features used for creating our figures and tables, and perhaps the custom functions we created to automate our work. 
 
 Remember that making the code available in the appendix **favours the transparency and replicability of your work**. 
