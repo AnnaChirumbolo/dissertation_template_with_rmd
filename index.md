@@ -26,7 +26,7 @@
 
 <a href="#section2"> 3. "Child" documents.</a>
 
-<a href="#subsect3"> Example: the Appendix.</a>
+<a href="#subsect3"><sub> Example: the Appendix.</sub></a>
 
 <a href="#section4"> 4. Let's merge!</a>
 
