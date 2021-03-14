@@ -1,6 +1,6 @@
 ![tutheaderbl](https://user-images.githubusercontent.com/43357858/111071816-2a280400-84d8-11eb-8b1e-8cb70e58f2dc.png)
 
-## Write your dissertation in Rmarkdown!
+## Write your dissertation in Rmarkdown
 
 *Created by Anna*
 
