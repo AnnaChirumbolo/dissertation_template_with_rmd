@@ -51,7 +51,9 @@ So, first thing we are going to do is create the main .Rmd file.
 Here, we are going to set the first page of your dissertation and we are going to **link** all the other .Rmd documents containing the different sections. 
 In this file, we are also going to set the general formatting rules (written in **LaTex**), which are going to apply to the entire document.
 
-**Open Rstudio and create a new .Rmd file** by clicking on the blank sheet with the green plus one the left-hand side of the interface. 
+First thing to do is to download the [tutorial repo](https://github.com/AnnaChirumbolo/dissertation_template_with_rmd.git).
+
+**Open Rstudio and create a new .Rmd file, within the repo folder you've just downloaded**, by clicking on the blank sheet with the green plus one the left-hand side of the interface. 
 
 <img width="1280" alt="open_md" src="https://user-images.githubusercontent.com/43357858/111072154-91928380-84d9-11eb-8dd7-6cee402bd889.png">
 
