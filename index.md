@@ -531,7 +531,7 @@ Now you can fill the sections in with your own content and your personal touch.
 
 Here are some final tips which I found to be **essential** when I wrote my own dissertation on Rmarkdown. 
 
-1. I have not talked about in detail in this tutorial, but the **Abbreviations** section can be very useful in your dissertation if you need to talk about many variables and features and need a way to speed things up (and save word count); 
+1. I have not talked about in detail in this tutorial, but the **Abbreviations** section (it comes **after the TOC and acknowledgments**) can be very useful in your dissertation if you need to talk about many variables and features and need a way to speed things up (and save word count); 
 
 2. Make sure you have [LaTex](https://www.latex-project.org/get/) and [tinytex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html) installed to be able to **create pdf documents from rmarkdown**. Without it, it just won't work; 
 
