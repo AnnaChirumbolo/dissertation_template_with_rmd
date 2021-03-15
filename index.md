@@ -454,7 +454,7 @@ If you have never used the `tidyverse` package before don't worry - it is not pa
 
 Now, the data set is almost presentable and ready to be inserted in a table. There are still other details, like number of decimals to be fixed, that `knitr::kable()` function helps fixing.
 
-`kableExtra` is a package that uses `kable()` and *pipes* from the `Tidyverse` package, to build complex and professional tables. We are going to use one example for the sake of this tutorial, but if you wish to explore further on the large variety of features that kableExtra can offer, have a look at its <a href="https://cran.r-project.org/web/packages/kableExtra/kableExtra.pdf" target="____blank">manual</a>.[^4]. Moreover, kableExtra is often combined with `viridisLite` package, for using smoother <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html" target="____blank">colour scales</a>.
+`kableExtra` is a package that uses `kable()` and *pipes* from the `Tidyverse` package, to build complex and professional tables. We are going to use one example for the sake of this tutorial, but if you wish to explore further on the large variety of features that kableExtra can offer, have a look at its <a href="https://cran.r-project.org/web/packages/kableExtra/kableExtra.pdf" target="____blank">manual</a>. Moreover, kableExtra is often combined with `viridisLite` package, for using smoother <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html" target="____blank">colour scales</a>.
 
 Copy the following code chunk and run it (make sure it is spaced from the one above).
 
