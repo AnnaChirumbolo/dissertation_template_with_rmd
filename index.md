@@ -483,17 +483,17 @@ You should now have a 10-page document, with each section of the dissertation ap
 
 ### Bibliography and citations 
 
-For any scientific report and article, citing your sources and creating a list of references at the end of your work is **fundamental** if not mandatory. 
+For any scientific report and article, citing your sources and creating a list of references at the end of your document is **fundamental** if not mandatory. 
 
 We are going to do the same for our template. 
 
-When creating and managing a bibiliography in LaTex, we use the package `natbib` for customising citations, when using `BibiTex`. [BibiTex](http://www.bibtex.org/) is a tool and file format used to describe and process lists of references, mostly in conjunction with LaTex documents.
+When creating and managing a bibiliography in LaTex, we use the package `natbib` for customising citations, when using `BibiTex`. [BibiTex](http://www.bibtex.org/) is a tool and file format used to describe and process lists of references, mostly **in conjunction with LaTex documents.**
 
-As I hope most of you will know and know how to use by now, there are a series of reference managers freely available to download, which are going to ease and speed up the amount of time you are going to spend referencing and citing in your work. The most popular and best ones (to my advice) are Mendeley and Zotero. The nice feature about them, is that after saving your list of references, you can export them into `BibiTex format`! In this way, you can directly paste the content from your reference manager into a new `.bib` we are going to create and link to our main.Rmd document. 
+As I hope most of you will know and know how to use by now, there are a series of **reference managers** freely available to download, which ease and speed up the amount of time you are going to spend referencing and citing in your work. 
 
-First of all, in our **YAML header** we are going to add a new specification, linking the main.Rmd to a new file called **bibliography.bib**. I have already created this file, which contains a few references related to the Atlantic puffin (*Fratercula arctica*) species. I used zotero to export the file into a .bib format. 
+The most popular and best ones (to my advice) are **Mendeley and Zotero**. One of the nice features about them is that after saving your list of references in a folder, you can export them into `BibiTex format` (**.bib**). This way, **you can directly link the content from the new `.bib` file to any document that supports LaTex syntax.**
 
-Your YAML should look like this now (the addition is at the bottom).
+To include citations and fill in the bibliography section in our template, we need to add a few more details inside our **YAML header**. 
 
 ````
 ---
@@ -511,16 +511,24 @@ header-includes:
   - \usepackage{fancyhdr}
   - \usepackage{lastpage}
   - \usepackage{dcolumn}
+
+  - \usepackage{natbib}\bibliographystyle{agsm}
+  - \usepackage[nottoc, numbib]{tocbibind}
 bibliography: bibliography.bib
 ---
 ````
 
-As you can see, I have added the specification of the `bibliography.bib` file containing the **references**. 
+As you can see, I have added a the new package (`natbib`) in the `header-includes:` option of the YAML.Not only: I have also added `tocbibind` package, which allows you to include the bibliography in your TOC. The options `nottoc` disables the inclusion of the toc (which otherwise would be a duplicate), and `numbib` makes the bibliograpgy numbered in the toc list, thus consistent with the other section titles. 
 
-If you open **bibliography.bib**, it is going to look like this: 
+ From the package I have also specified the **bibliographic style** to be `agsm`, which corresponds to **Harvard**.
+
+You can specify whatever style you desire, have a look at the styles available in the package [here](https://www.overleaf.com/learn/latex/Natbib_bibliography_styles).
+
+The YAML also needs specifying the file containing all of your references, with the `.bib` extension. In our case, I have already created a file called `bibliography.bib`, containing a few references on the Atlantic Puffin (*Fratercula arctica*), subject of our sample dataset for this tutorial (which we are going to look at in the next section).
+
+If you open **bibliography.bib**, each citation is structured as such: 
 
 ````
-
 @article{breton_encounter_2006,
 	title = {Encounter, Survival, and Movement Probabilities from an Atlantic Puffin (fratercula Arctica) Metapopulation},
 	volume = {76},
@@ -542,24 +550,55 @@ If you open **bibliography.bib**, it is going to look like this:
 }
 ````
 
-You can see the citation starts with an `@`, followed by curly brackets, which contain the citation key, and other information (such as title, abstract, etc.).
+You can see the citation starts with an `@`, followed by curly brackets, which contain the **citation key**, and other information relevant to the article (such as title, abstract, author, date etc.).
 
-The citation key is fundamental, as that is what you're going to need, to cite in-line with your text. 
+**The citation key is fundamental for in-line referencing**. Keep that in mind! 
 
-An in-line citation is going to look like this (taking the citation key from the example above): 
+Try to write a few in-line citations in any section of the dissertation that you'd like. For example, open the introduction.Rmd file and paste the following.
 
 ````
-[@breton_encounter_2006]
+\citep{breton_encounter_2006}
+
+\citep*{breton_encounter_2006}
+
+\citet{breton_encounter_2006}
+
+\citet*{breton_encounter_2006}
+
+\citep{martin_diet_1989, breton_encounter_2006}
+
+\citeauthor{breton_encounter_2006}
+
+\citeauthor*{breton_encounter_2006}
+
+\citeyear{breton_encounter_2006}
+
+\citeyearpar{breton_encounter_2006}
 ````
 
-The citation (Harvard style, author name and year) has to be placed within square brackets and the @ symbol is going to link to the `bibliography.bib` file and select the information from the reference key that has been tagged. 
+The **citation key** is always referred to within curly brackets, and you can specify multiple citations within the same brackets. **The command changes the type of in-line citation.** Observe the result to see what each command returns specifically. 
 
-The citation is going to look like this:
+![intext_citation](https://user-images.githubusercontent.com/43357858/111702795-19abbc80-883d-11eb-8701-51fdbc65a60d.jpg)
 
-![intext_citation](https://user-images.githubusercontent.com/43357858/111619780-3ff23d80-87e6-11eb-86a0-85c3c458d23a.jpg)
+In case you have more doubts and want to find out more about commands for citing and other commands and options from the `natbib` package, check out this [reference sheet](https://gking.harvard.edu/files/natnotes2.pdf).
 
+Last, we need to write our list of long references. Our `bibliography.Rmd` does not have a title when you first open it. Don't worry about it, as the `\bibliography` command takes care of adding a title itself. 
 
-**INSERT ON WRITING REFERENCES AT THE END IN THE BIB SECTION**
+Open the `bibliography.Rmd` file and paste this simple command.
+
+```
+\bibliography{bibliography}
+```
+
+**Note** that the name of the file containing our list of references has to be included without the .bib extension in the `\bibliography` command. This command takes the whole content from the list and turns into the Harvard long-format style of referencing. In alphabetical order, of course. 
+
+This is your ouput in the bibliography section. 
+
+![biblio_long](https://user-images.githubusercontent.com/43357858/111703918-a4d98200-883e-11eb-9aa3-e8ac9372c5dc.jpg)
+
+And check out the table of contents, with bibliography being included and numbered (thanks to `numbib` option in the `tocbibbind` package). 
+
+![addedbiblio_toc](https://user-images.githubusercontent.com/43357858/111704217-10bbea80-883f-11eb-9c79-bd65f958de52.jpg)
 
 <a name="subsect3"></a>
 
