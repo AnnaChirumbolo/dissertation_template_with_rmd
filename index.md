@@ -28,9 +28,11 @@
 
 <a href="#subsect3"><sub> Example: the Appendix.</sub></a>
 
-<a href="#section4"> 4. Let's merge!</a>
+<a href="#bib"> 4. Bibliography and citations. </a>
 
-<a href="#section5"> 5. Final tips. </a>
+<a href="#section4"> 5. Let's merge!</a>
+
+<a href="#section5"> 6. Final tips. </a>
 
 --------------------------------------------
 
@@ -47,7 +49,7 @@ As the aim of this tutorial is to successfully write your dissertation with Rmar
 
 In fact, for sake of easier read and better organisation, but also faster upload of the final pdf, we are going to create multiple .Rmd files, corresponding to the main sections of the dissertation. We are then going to merge them together, within the "mother" document. 
 
-So, first thing we are going to do is create the main .Rmd file. 
+So, first thing we are going to do is create the **main.Rmd** file (you can name the file like this, if you wish).
 Here, we are going to set the first page of your dissertation and we are going to **link** all the other .Rmd documents containing the different sections. 
 In this file, we are also going to set the general formatting rules (written in **LaTex**), which are going to apply to the entire document.
 
@@ -59,9 +61,9 @@ First thing to do is to download the [tutorial repo](https://github.com/AnnaChir
 
 Once you have created a new Rmarkdown document, leave title and author blank (you don't want these to appear at the top of your pdf) and select PDF as the Default Output Format. Click OK and let's start writing in the new file.
 
-<img width="1280" alt="rmd_opened" src="https://user-images.githubusercontent.com/43357858/111072170-a40cbd00-84d9-11eb-9f9f-c34388939c3e.png">
+![opening_md](https://user-images.githubusercontent.com/43357858/111607859-ed5e5480-87d8-11eb-9c4a-732b7ffd9795.jpg)
 
-You will see at the top a section called **YAML header**, delimited by three hyphens (---). The header embeds the information that you have just given (blank for the title, no author and pdf_document as your desired output), and allows you to set the rules that are going to be applied throught the document (as well as the **linked** documents). This header will not show in the output. 
+You will see at the top a section called **YAML header**, delimited by three hyphens (---). The header embeds the information that you have just given (blank for the title, no author and pdf_document as your desired output), and allows you to set the rules that are going to be applied throught the document (as well as the **linked** documents). **This header will not show in the output.**
 
 The School of Geosciences provides standard formatting rules for the undergraduate dissertation document, and we are going to set the file according to them (these are as of 2020, if they have changed edit them accordingly). 
 
@@ -86,11 +88,11 @@ header-includes:
 ---
 ````
 
-- **number_sections: TRUE** will automatically create sections that ordered according to the type of header (main, sub-, etc.); 
+- **number_sections: TRUE** will automatically create sections in your Table Of Contents (TOC), ordered according to the type of header you specify (main, sub-, subsub- etc.); 
 
 - **geometry**: sets margin sides for pdf output (according to School of Geosciences guidelines); 
 
-- **fontsize**: sets entire font throughout document to be 11 pt. You can change that in the file for specific sections of your choosing; 
+- **fontsize**: sets entire font throughout the document to be 11 pt. You can change that in the file for specific sections of your choosing; 
 
 - **header-includes**: allows you to specify all the **LaTex** packages you are going to need in your file. In this way, you can keep all the specifics inside your main .Rmd document and they **will apply to the child documents, too**. 
 
@@ -106,12 +108,12 @@ The packages include:
 
 - [fancyhdr](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/fancyhdr/fancyhdr.pdf): the package provides extensive facilities, both for *constructing headers and footers, and for controlling their use*; 
 
-- [lastpage](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/lastpage/lastpage.pdf): *references the number of pages *in your LaTex document through the introduction of a new label; 
+- [lastpage](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/lastpage/lastpage.pdf): *references the number of pages* in your LaTex document through the introduction of a new label; 
 
 - [dcolumn](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/required/tools/dcolumn.pdf): makes use of the "array" package to define a *"D" column* for use in tabular environments. 
 
 
-Below the first code chunk (already present from the start of the document), write the following. 
+Erase all the content **but** the first code chunk (already present from the start of the document), and write the following. 
 
 ````
 \allsectionsfont{\centering}
@@ -131,7 +133,7 @@ The **\allsectionsfont** command specifies changes to your header font - in this
 
 Let's create the **front page** of the dissertation. It's an important one, as it's going to make the first great impression of your work!
 
-The front page requires all elements to be **centred**. We are going to start using some **LaTex syntax** to do so. Write the following under the first code chunk:
+The front page requires all elements to be **centred**. We are going to start using some **LaTex syntax** to do so. Write the following at the end of what we've written so far (below the first code chunk and the settings on text alignment).
 
 ````
 \begin{centering}
@@ -159,7 +161,7 @@ knitr::include_graphics("img/uniedlogo.png")
 
 This way, the image of the UoE logo is going to appear at the top of the page. 
 
-<img width="1280" alt="uni_logo_chunk" src="https://user-images.githubusercontent.com/43357858/111072428-de2a8e80-84da-11eb-8f36-ed9c5c323576.png">
+![uni_logo_chunk](https://user-images.githubusercontent.com/43357858/111608004-10890400-87d9-11eb-8b1a-f706c33e6af5.png)
 
 As you can see, I have **named** the code chunk "uni_logo", making it easier to retrieve the chunk later on, when there are going to be many more. 
 
@@ -251,13 +253,93 @@ In fact, by changing the font back to \normalsize you input the .Rmd file to go 
 
 We have created the front page, which should look like this. 
 
-<img width="583" alt="front_page_pdf" src="https://user-images.githubusercontent.com/43357858/111072920-f3082180-84dc-11eb-9a68-1101e7f55977.png">
+![front_output](https://user-images.githubusercontent.com/43357858/111608138-2eeeff80-87d9-11eb-871a-79ccfb170957.jpg)
+
+And this is the summary of the code that should be written so far in your .Rmd (YAML included).
+
+````
+---
+title: ''
+output: 
+  pdf_document:
+        number_sections: TRUE
+geometry: "left = 2.5cm, right = 2cm, top = 2cm, bottom = 2cm"
+fontsize: 11pt
+header-includes:
+  - \usepackage{float}
+  - \usepackage{sectsty}
+  - \usepackage{paralist}
+  - \usepackage{setspace}\spacing{1.5}
+  - \usepackage{fancyhdr}
+  - \usepackage{lastpage}
+  - \usepackage{dcolumn}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(tinytex.verbose = TRUE)
+```
+
+\allsectionsfont{\centering}
+\subsectionfont{\raggedright}
+\subsubsectionfont{\raggedright}
+
+\pagenumbering{gobble} 
+
+\begin{centering}
+
+\vspace{3cm}
+
+```{r uni_logo, echo=F, out.width="20%"}
+knitr::include_graphics("img/uniedlogo.png")
+```
+
+\vspace{1cm}
+
+\Large 
+{\bf The University Of Edinburgh}
+
+\Large
+{\bf School Of Geosciences}
+
+\vspace{1cm}
+
+\Large
+
+\doublespacing
+{\bf COMPARISON OF TOP-DOWN AND BOTTOM-UP APPROACHES ON SPECIFIC LEAF AREA PATTERNS, \\AT GLOBAL, LATITUDINAL, AND BIOME SCALES}
+
+\vspace{1 cm}
+
+\normalsize
+\singlespacing
+By 
+
+\vspace{0.5 cm}
+
+\Large
+
+{\bf ANNA CHIRUMBOLO}
+
+\vspace{1.5 cm}
+
+in partial fulfilment of the requirement \\
+for the degree of BSc with Honours \\
+in Ecological and Environmental Sciences 
+
+\vspace{1.5 cm}
+
+\normalsize
+mm yy
+
+\end{centering}
+````
 
 <a name="subsect2"></a>
 
 ### b) Abstract
 
-We can add the Abstract on a new page, by specifying this LaTex command (remember to start writing outside of the centering command from now on). 
+We can add the Abstract on a new page, by specifying this LaTex command. **Remember to start writing outside of the centering command from now on.** 
 
 ````
 \newpage
@@ -306,7 +388,7 @@ I have included main guidelines for writing an abstract, which should come usefu
 
 One very important section is the TOC. It is typically located after the abstract (and abbreviations section, which is **optional, but very useful**). 
 
-Below, I have specified the syntax for including the toc, which is very straightforward.
+Below, I have specified the syntax for including the toc, which is very straightforward. Paste it below the abstract.
 
 ````
 \pagenumbering{roman} 
@@ -323,17 +405,21 @@ I have included the **roman** option in the **pagenumbering** command, telling t
 
 The remaining syntax prepares a new page for writing the toc - it is created automatically, and will identify headers and subheaders according to how you have written them (see [markdown syntax](https://github.com/tchapi/markdown-cheatsheet) for headers and subheaders). 
 
+You should get a new page with "Contents" as title and the rest is blank - for now. This page is going to get populated from now on, as you'll be adding headers and subheaders. 
+
+![toc_empty](https://user-images.githubusercontent.com/43357858/111608677-c81e1600-87d9-11eb-987b-82d48f1e9b58.jpg)
+
 <a name="section2"></a>
 
 ## 3. "Child" documents.
 
 Looking good! 
 
-The front page of the dissertation is ready, and so is your abstract. 
+The front page of the dissertation is ready, and so are your abstract and toc.
 
 Now we need to add the different sections of your dissertation, which we'll create on separate .Rmd files as I mentioned at the beginning of this tutorial. These .rmd files will behave as **'children'** to the main file, which we have worked on so far.
 
-In the main document, paste the following after the section on the abstract.
+In the main document, paste the following after the toc section you created just above.
 
 ````
 \newpage
@@ -345,6 +431,7 @@ In the main document, paste the following after the section on the abstract.
 
 ```{r intro, child = 'introduction.Rmd'}
 ```
+\pagenumbering{arabic} 
 
 \newpage
 
@@ -379,9 +466,13 @@ In the main document, paste the following after the section on the abstract.
 
 As you can see, we've just added a code chunk for each section of your dissertation. The "child" feature specified in the code chunk options, links the **content** of this other .Rmd file to the main one. This means that once you'll knit the main document, the **content from each of the child documents will be pasted and marged into one, final pdf**. 
 
+Also **note** that from the introduction onwards I've changed the pagenumbering to arabic. You are going to see that in your pdf, the main sections are going to be numbered in arabic, compared to the introductory pages (abstract, toc, acknowledgments), which are numbered in roman.
+
 However, remember to make sure you've created **all** .Rmd files that you have **specified** in your main file, and **check the spelling**! As you can imagine, non-existing or mispelled files which you will try to link to the main document will result in an error, whenever you will try to knit to pdf. 
 
 To speed things up a little, I have created the files already and you can see them in the [repository](https://github.com/AnnaChirumbolo/dissertation_template_with_rmd). Knitting the document now, you should see how the content from each has been pasted into one main document.
+
+![md_childdocs](https://user-images.githubusercontent.com/43357858/111608181-3910fe00-87d9-11eb-979a-cfe64a587373.jpg)
 
 You should now have a 10-page document, with each section of the dissertation appearing on a new page. The structure is coming along nicely! Well done!
 
@@ -432,7 +523,7 @@ We are going to add a new chunk with the following code, to start coding live wi
 We are opening a .csv file containing information on the Atlantic puffins (*Fratercula arctica*) species trend and temperature information from 1979 until 2008, in Norway.  
 
 ````
-```{r setup and tidy, include = F}
+```{r open data and libraries, include = F}
 library(knitr)  # for dynamic report generation
 library(kableExtra) # to build complex HTML or 'LaTex' tables
 library(tidyverse) # for data manipulation
@@ -464,13 +555,14 @@ puffins_t %>%
   slice(1:10) %>%   # the table is going to show only the first 10 lines (a sample of the data set)
   kable(digits = 2) %>% # each value has 2 decimal digits
   kable_styling(full_width = F, # the width of the table is not fit to the width of the page
-                position = "center", font_size = 10)  # table settings with the kableExtra package
-```			
+                position = "center", font_size = 10,
+                latex_options = "hold_position")  # table settings with the kableExtra package
+```	
 ~~~~
 
 You can notice that the table has now appeared after the chunk and in the 'Viewer' tab on the bottom-right panel.
 
-![app_table](https://user-images.githubusercontent.com/43357858/111074272-8abc3e80-84e2-11eb-992a-8c311a2315f5.jpg)
+![appendixA_table](https://user-images.githubusercontent.com/43357858/111608223-43cb9300-87d9-11eb-8251-33ad959862b9.jpg)
 
 **REMEMBER: the tables output in Rstudio Viewer are in html format. This means that on pdf will have a slightly different look, particularly when it comes to colours chosen. Make sure you specify these colors and check the output (kableExtra was initially made for hmtl, not pdf outputs).**
 
@@ -483,7 +575,7 @@ Otherwise, **knitr** package provides us with options to add pre-saved figures. 
 As an example, we are displaying mean temperature change between 1979 and 2008 in Norway. 
 
 ~~~~
-```{r path-to-folder plots fixed size, echo = TRUE, out.height="40%", fig.show='hold', fig.align="center",  fig.cap="Additional images in Appendix B"}
+```{r path-to-folder plots fixed size, echo = FALSE, out.height="40%", fig.show='hold', fig.align="center",  fig.cap="Additional images in Appendix B"}
 
 include_graphics("img/meant_plot.png") 
 ```
@@ -497,8 +589,7 @@ include_graphics("img/meant_plot.png")
 
 - <sub>`The 'include_graphics()` function is part of the 'knitr' package, and it allows to embed external images in document format supported by 'knitr'.</sub>
 
-![meant_plot](https://user-images.githubusercontent.com/43357858/111078338-35d5f380-84f5-11eb-9e81-58ab4ff72e7e.png)
-
+![appendixB_fig](https://user-images.githubusercontent.com/43357858/111608377-6e1d5080-87d9-11eb-803f-a2ba882dd546.jpg)
 
 Finally, **Appendix C: code**. Let's imagine we want to use our last appendix to include all the code we used to carry out our data cleaning, the statistical analyses, the features used for creating our figures and tables, and perhaps the custom functions we created to automate our work. 
 
@@ -509,25 +600,52 @@ Doing this requires a very simple, single line of code.
 As you can see, we are leaving the code chunk empty, and writing exclusively within the curly brackets, to set the options for display. 
 
 ~~~~
-```{r code=readLines(knitr::purl('./appendix.Rmd', documentation = 0)), eval = F}
+```{r ref.label=knitr::all_labels(), echo=TRUE, eval=FALSE}
 ```
 ~~~~
 
-The function `purl()` takes the source code from the main document (specified by the file path `'./file.Rmd'`) and lists it within a single chunk that is not run (`eval=F`).
+The function `all_labels()` from **knitr** returns a vector of **all chunk labels** in the document you're working on (in this case, the appendix itself). The function thus retrieves all the source code chunks to this particular code chunk. `Echo = True` will show the source code inside this code chunk, which is equivalent to the source code from the **entire document**. `Eval = False` will not evaluate the code chunk as it all the code has been executed before.  
 
 A list of code lines should appear within the code chunk and it corresponds to the code we have just written in appendix.Rmd!
 
+By **code chunk label** we mean the custom names that you can give the code chunk, to be differentiated from the others so you can more easily recognise it and its source code. Not only that, considering that all_labels() takes **all** labels and so all code chunks, it might be useful to exclude some which are not going to be necessary, like the setup label present at the top of your main.Rmd.
+
+To avoid it, it will be necessary to add this new code chunk to above the all_labels() one. 
+
+~~~~
+```{r get-labels, echo = FALSE}
+labs = knitr::all_labels() # this is the new code chunk to add
+labs = setdiff(labs, c("setup", "get-labels")) # this function excludes the code chunk with the label "setup" from being displayed.
+```
+
+```{r all-code, ref.label=labs, eval=FALSE}
+# this code chunk displays all source code from your entire dissertation document (that you have written in .Rmd, not from your R script).
+```
+~~~~
+
+![appendixC_code](https://user-images.githubusercontent.com/43357858/111608465-89885b80-87d9-11eb-8830-14219682a2fb.jpg)
+
+![appendixC_code_output](https://user-images.githubusercontent.com/43357858/111608601-b2105580-87d9-11eb-94ac-a35b472346a0.jpg)
+
+<a name="bib"></a>
+
+## 4. Bibliography and citations 
+
+
+
 <a name="section4"></a>
 
-## 4. Let's Merge! 
+## 5. Let's Merge! 
 
 Make sure **that all the text we've written so far is spelled correctly**, and be ready to **knit the main document**!
 
 Now you can fill the sections in with your own content and your personal touch. 
 
+In the meantime, [this]() is what your output should look like at the end of this tutorial. 
+
 <a name="section5"></a>
 
-## 5. Final tips. 
+## 6. Final tips. 
 
 Here are some final tips which I found to be **essential** when I wrote my own dissertation on Rmarkdown. 
 
