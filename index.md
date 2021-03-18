@@ -144,9 +144,9 @@ The front page requires all elements to be **centred**. We are going to start us
 
 This is written in LaTex. We are defining a space in the document, **within** which anything we will write will be centered on the page. 
 
-To be clearer, the content of the front page is all **inside the `begin` and `end` centering** commands. The `\begin{centering}` has to be at the **top** and `\end{centering}` needs to be at the **bottom** of the **content for the front page**.
+To be clearer, the content of the front page is all **inside the `begin` and `end` centering** commands. The `\begin{centering}` has to be at the **top** and `\end{centering}` needs to be at the **bottom** in the **the front page**.
 
-In between these lines, we are going to specify a 3 cm spacing from the top of the page, to then insert the first element: the university logo. 
+**In between** the `\begin{centering}` and `\end{centering}` we are going to specify a 3 cm spacing from the top of the page, to then insert the first element: the university logo. 
 
 ````
 \vspace{3cm}
