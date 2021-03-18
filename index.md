@@ -49,7 +49,8 @@ As the aim of this tutorial is to successfully write your dissertation with Rmar
 
 In fact, for sake of easier read and better organisation, but also faster upload of the final pdf, we are going to create multiple .Rmd files, corresponding to the main sections of the dissertation. We are then going to merge them together, within the "mother" document. 
 
-So, first thing we are going to do is create the **main.Rmd** file (you can name the file like this, if you wish).
+**First thing we are going to do is create the *main.Rmd* file (you can name the file like this, if you wish).**
+
 Here, we are going to set the first page of your dissertation and we are going to **link** all the other .Rmd documents containing the different sections. 
 In this file, we are also going to set the general formatting rules (written in `LaTex`), which are going to apply to the entire document.
 
@@ -113,7 +114,7 @@ The packages include:
 - [dcolumn](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/required/tools/dcolumn.pdf): makes use of the "array" package to define a *"D" column* for use in tabular environments. 
 
 
-Erase all the content **but** the first code chunk (already present from the start of the document), and write the following. 
+Erase all the content from the RMarkdown document, **but** the first code chunk, and write the following after the first code chunk.  
 
 ````
 \allsectionsfont{\centering}
@@ -143,6 +144,8 @@ The front page requires all elements to be **centred**. We are going to start us
 
 This is written in LaTex. We are defining a space in the document, **within** which anything we will write will be centered on the page. 
 
+To be clearer, the content of the front page is all **inside the `begin` and `end` centering** commands. The `\begin{centering}` has to be at the **top** and `\end{centering}` needs to be at the **bottom** of the **content for the front page**.
+
 In between these lines, we are going to specify a 3 cm spacing from the top of the page, to then insert the first element: the university logo. 
 
 ````
@@ -150,6 +153,8 @@ In between these lines, we are going to specify a 3 cm spacing from the top of t
 ````
 
 Undearneath the *vertical spacing (vspace)* function, add a new code chunk by selecting on the icon "insert" and clicking on "R". 
+
+![uni_logo_chunk](https://user-images.githubusercontent.com/43357858/111621001-bc395080-87e7-11eb-81f1-a0f6b97d65df.png)
 
 Inside it, write
 
@@ -160,8 +165,6 @@ knitr::include_graphics("img/uniedlogo.png")
 ````
 
 This way, the image of the UoE logo is going to appear at the top of the page. 
-
-![uni_logo_chunk](https://user-images.githubusercontent.com/43357858/111621001-bc395080-87e7-11eb-81f1-a0f6b97d65df.png)
 
 As you can see, I have **named** the code chunk "uni_logo", making it easier to retrieve the chunk later on, when there are going to be many more. 
 
