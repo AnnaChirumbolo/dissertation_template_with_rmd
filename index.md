@@ -51,7 +51,7 @@ In fact, for sake of easier read and better organisation, but also faster upload
 
 So, first thing we are going to do is create the **main.Rmd** file (you can name the file like this, if you wish).
 Here, we are going to set the first page of your dissertation and we are going to **link** all the other .Rmd documents containing the different sections. 
-In this file, we are also going to set the general formatting rules (written in **LaTex**), which are going to apply to the entire document.
+In this file, we are also going to set the general formatting rules (written in `LaTex`), which are going to apply to the entire document.
 
 First thing to do is to download the [tutorial repo](https://github.com/AnnaChirumbolo/dissertation_template_with_rmd.git).
 
@@ -123,9 +123,9 @@ Erase all the content **but** the first code chunk (already present from the sta
 \pagenumbering{gobble} 
 ````
 
-The **\allsectionsfont** command specifies changes to your header font - in this case to have them centered. Instead, we have specified **\subsectionfont** and **\subsubsectionfont** (for sub-headers) to be ragged right.  
+The `\allsectionsfont` command specifies changes to your header font - in this case to have them centered. Instead, we have specified `\subsectionfont` and `\subsubsectionfont` (for sub-headers) to be ragged right.  
 
-**\pagenumbering{gobble}**, instead, **does not print any page number**, and this is ideal for the moment, as we are about to create the front page, which does not require one. Remember though, **gobble** option in the **pagenumbering** command has the side effect to reset the page number to 1 - so it is unlikely to be helpful **other than at the beginning of your document!**
+`\pagenumbering{gobble}`, instead, **does not print any page number**, and this is ideal for the moment, as we are about to create the front page, which does not require one. Remember though, `gobble` option in the `pagenumbering` command has the side effect to reset the page number to 1 - so it is unlikely to be helpful **other than at the beginning of your document!**
 
 <a name="subsect1"></a>
 
@@ -185,9 +185,9 @@ You can retrieve the image of the university logo with the function *include_gra
 {\bf School Of Geosciences}
 ````
 
-You recall the *\vspace* function from above. **\Large** sets all text below it to be of larger font, and \bf which sets the text within curly brackets to **bold**.
+You recall the *\vspace* function from above. `\Large` sets all text below it to be of larger font, and `\bf` which sets the text within curly brackets to **bold**.
 
-**\Large** is a font changing command, and the pt size it reflects is often determined by the document class itself. Here is an overview of the values for the standard classes. 
+`\Large` is a font changing command, and the pt size it reflects is often determined by the document class itself. Here is an overview of the values for the standard classes. 
 
 ````
 Command             10pt    11pt    12pt
@@ -249,7 +249,7 @@ Again, as a matter of formatting guidance, I added some specified spacing in bet
 
 **Remember** that rmarkdown will remember any input you last gave it, and to change it again need to specify the new function for the lines of text that follow!
 
-In fact, by changing the font back to \normalsize you input the .Rmd file to go back to a 'normal' font (12 pt), since the last input you gave it was to be \Large. 
+In fact, by changing the font back to `\normalsize` you input the .Rmd file to go back to a 'normal' font (12 pt), since the last input you gave it was to be `\Large`. 
 
 We have created the front page, which should look like this. 
 
@@ -401,11 +401,11 @@ Below, I have specified the syntax for including the toc, which is very straight
 \tableofcontents
 ````
 
-I have included the **roman** option in the **pagenumbering** command, telling the document that from now on, it can start numering the pages, roman way. 
+I have included the `roman` option in the `pagenumbering` command, telling the document that from now on, it can start numering the pages, roman way. 
 
 The remaining syntax prepares a new page for writing the toc - it is created automatically, and will identify headers and subheaders according to how you have written them (see [markdown syntax](https://github.com/tchapi/markdown-cheatsheet) for headers and subheaders). 
 
-You should get a new page with "Contents" as title and the rest is blank - for now. This page is going to get populated from now on, as you'll be adding headers and subheaders. 
+You should get a new page with **Contents** as title and the rest is blank - for now. This page is going to get populated from now on, as you'll be adding headers and subheaders. 
 
 ![toc_empty](https://user-images.githubusercontent.com/43357858/111608677-c81e1600-87d9-11eb-987b-82d48f1e9b58.jpg)
 
