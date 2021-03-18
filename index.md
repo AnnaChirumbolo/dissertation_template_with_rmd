@@ -61,7 +61,7 @@ First thing to do is to download the [tutorial repo](https://github.com/AnnaChir
 
 Once you have created a new Rmarkdown document, leave title and author blank (you don't want these to appear at the top of your pdf) and select PDF as the Default Output Format. Click OK and let's start writing in the new file.
 
-![opening_md](https://user-images.githubusercontent.com/43357858/111607859-ed5e5480-87d8-11eb-9c4a-732b7ffd9795.jpg)
+![opening_md](https://user-images.githubusercontent.com/43357858/111620941-a75cbd00-87e7-11eb-84cc-6f4e51be7a31.jpg)
 
 You will see at the top a section called **YAML header**, delimited by three hyphens (---). The header embeds the information that you have just given (blank for the title, no author and pdf_document as your desired output), and allows you to set the rules that are going to be applied throught the document (as well as the **linked** documents). **This header will not show in the output.**
 
@@ -161,7 +161,7 @@ knitr::include_graphics("img/uniedlogo.png")
 
 This way, the image of the UoE logo is going to appear at the top of the page. 
 
-![uni_logo_chunk](https://user-images.githubusercontent.com/43357858/111608004-10890400-87d9-11eb-8b1a-f706c33e6af5.png)
+![uni_logo_chunk](https://user-images.githubusercontent.com/43357858/111621001-bc395080-87e7-11eb-81f1-a0f6b97d65df.png)
 
 As you can see, I have **named** the code chunk "uni_logo", making it easier to retrieve the chunk later on, when there are going to be many more. 
 
