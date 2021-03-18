@@ -26,9 +26,9 @@
 
 <a href="#section2"> 3. "Child" documents.</a>
 
-<a href="#subsect3"><sub> Example: the Appendix.</sub></a>
+<a href="#bib"><sub> Bibliography and citations.</sub></a>
 
-<a href="#bib"> 4. Bibliography and citations. </a>
+<a href="#subsect3"><sub> The Appendix.</sub></a>
 
 <a href="#section4"> 5. Let's merge!</a>
 
@@ -476,11 +476,93 @@ To speed things up a little, I have created the files already and you can see th
 
 You should now have a 10-page document, with each section of the dissertation appearing on a new page. The structure is coming along nicely! Well done!
 
+<a name="bib"></a>
+
+### Bibliography and citations 
+
+For any scientific report and article, citing your sources and creating a list of references at the end of your work is **fundamental** if not mandatory. 
+
+We are going to do the same for our template. 
+
+When creating and managing a bibiliography in LaTex, we use the package `natbib` for customising citations, when using `BibiTex`. [BibiTex](http://www.bibtex.org/) is a tool and file format used to describe and process lists of references, mostly in conjunction with LaTex documents.
+
+As I hope most of you will know and know how to use by now, there are a series of reference managers freely available to download, which are going to ease and speed up the amount of time you are going to spend referencing and citing in your work. The most popular and best ones (to my advice) are Mendeley and Zotero. The nice feature about them, is that after saving your list of references, you can export them into `BibiTex format`! In this way, you can directly paste the content from your reference manager into a new `.bib` we are going to create and link to our main.Rmd document. 
+
+First of all, in our **YAML header** we are going to add a new specification, linking the main.Rmd to a new file called **bibliography.bib**. I have already created this file, which contains a few references related to the Atlantic puffin (*Fratercula arctica*) species. I used zotero to export the file into a .bib format. 
+
+Your YAML should look like this now (the addition is at the bottom).
+
+````
+---
+title: " "
+output:
+  pdf_document:
+    number_sections: TRUE
+geometry: "left = 2.5cm, right = 2cm, top = 2cm, bottom = 2cm"
+fontsize: 11pt
+header-includes:
+  - \usepackage{float}
+  - \usepackage{sectsty}
+  - \usepackage{paralist}
+  - \usepackage{setspace}\spacing{1.5}
+  - \usepackage{fancyhdr}
+  - \usepackage{lastpage}
+  - \usepackage{dcolumn}
+bibliography: bibliography.bib
+---
+````
+
+As you can see, I have added the specification of the `bibliography.bib` file containing the **references**. 
+
+If you open **bibliography.bib**, it is going to look like this: 
+
+````
+
+@article{breton_encounter_2006,
+	title = {Encounter, Survival, and Movement Probabilities from an Atlantic Puffin (fratercula Arctica) Metapopulation},
+	volume = {76},
+	rights = {© 2006 by the Ecological Society of America},
+	issn = {1557-7015},
+	url = {https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1890/05-0704},
+	doi = {https://doi.org/10.1890/05-0704},
+	abstract = {Several weaknesses in our understanding of long-lived animal populations have persisted, mainly due to a prevalence of studies of a single local population at the expense of multisite studies. We performed a multisite capture–mark–resight analysis using 2050 Atlantic Puffins (Fratercula arctica) banded as chicks on four islands (colonies) over 24 years in the Gulf of Maine, {USA} and Canada. Within program {MARK}, encounter, apparent survival, pre-breeding movement ({PBM}; annual movements between colonies prior to breeding), and natal dispersal ({ND}) probabilities were modeled as functions of age, colony, and several covariates. Information-theoretic model selection criteria and estimated model effect sizes were used to identify important effects and select models to estimate parameters. Encounter probabilities were extremely variable (0.10–0.95) and declined annually starting six years after bands were applied, due to changes in resighting effort, and band wear, respectively. Colony-dependent survival probabilities increased to a peak at age six years; arithmetic means from all colonies were: 0.70 for age 0–3, 0.78 for age 4, 0.81 for age 5, and 0.84 for age 6–8 years. Low adult survival (age ≥5 years) may reflect inclusion of breeding and nonbreeding adults in our sample or a bias due to band loss and illegibility. Consistent with a density-dependent prediction, the effect of colony size on survival was negative and acquired strong {AICc} support. However, this effect was inconsistent with strata effects in competing top models; the latter suggest that survival was lowest on the smallest island. The effects of origin and destination colony and origin colony size in {PBM} and {ND} probabilities resulted in important variation in these parameters. As few as 8\% and as many as 57\% of the puffins that we marked may have bred away from their natal colony, a signal of highly variable philopatry. Consistent with the conspecific attraction hypothesis, {ND} and {PBM} probabilities declined as the size of the origin colony increased. {PBM} probabilities were highest in the age 0–3 period, and these declined quickly with age thereafter. Strong colony and age effects in {ND} and {PMB} probabilities identify movement as a critical contributor to local population dynamics at our four study sites.},
+	pages = {133--149},
+	number = {1},
+	journaltitle = {Ecological Monographs},
+	author = {Breton, André R. and Diamond, Antony W. and Kress, Stephen W.},
+	urldate = {2021-03-18},
+	date = {2006},
+	langid = {english},
+	note = {\_eprint: https://esajournals.onlinelibrary.wiley.com/doi/pdf/10.1890/05-0704},
+	keywords = {Atlantic Puffin, dispersal, Fratercula arctica, Gulf of Maine islands, K-selected, local population, movement, multistrata, natal, seabird, subadult, survival},
+	file = {Full Text PDF:C\:\\Users\\annac\\Zotero\\storage\\5N3JWCP5\\Breton et al. - 2006 - Encounter, Survival, and Movement Probabilities fr.pdf:application/pdf},
+}
+````
+
+You can see the citation starts with an `@`, followed by curly brackets, which contain the citation key, and other information (such as title, abstract, etc.).
+
+The citation key is fundamental, as that is what you're going to need, to cite in-line with your text. 
+
+An in-line citation is going to look like this (taking the citation key from the example above): 
+
+````
+[@breton_encounter_2006]
+````
+
+The citation (Harvard style, author name and year) has to be placed within square brackets and the @ symbol is going to link to the `bibliography.bib` file and select the information from the reference key that has been tagged. 
+
+The citation is going to look like this:
+
+![intext_citation](https://user-images.githubusercontent.com/43357858/111619780-3ff23d80-87e6-11eb-86a0-85c3c458d23a.jpg)
+
+
+**INSERT ON WRITING REFERENCES AT THE END IN THE BIB SECTION**
+
 <a name="subsect3"></a>
 
-### Example: the appendix. 
+### The appendix. 
 
-As an example, we are going to structure a section that we do not often work with, because it is optional, albeit very useful - the appendix. You might decide to include it or not in your final dissertation, but what you're going to learn from now on applies to any section of your document. 
+As an example of child document, we are going to structure a section that we do not often work with, because it is optional, albeit very useful - the appendix. You might decide to include it or not in your final dissertation, but what you're going to learn from now on applies to any section of your document. 
 
 However, there are some general rules that apply to the appendix section. Appendices: 
 
@@ -626,12 +708,6 @@ labs = setdiff(labs, c("setup", "get-labels")) # this function excludes the code
 ![appendixC_code](https://user-images.githubusercontent.com/43357858/111608465-89885b80-87d9-11eb-8830-14219682a2fb.jpg)
 
 ![appendixC_code_output](https://user-images.githubusercontent.com/43357858/111608601-b2105580-87d9-11eb-94ac-a35b472346a0.jpg)
-
-<a name="bib"></a>
-
-## 4. Bibliography and citations 
-
-
 
 <a name="section4"></a>
 
