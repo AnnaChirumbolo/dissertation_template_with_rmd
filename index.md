@@ -16,6 +16,8 @@
 
 ### Steps:
 
+<a href="#section0"> 0. First step: installing LaTex.</a>
+
 <a href="#section1"> 1. The "main" Rmarkdown document.</a>
 
 <a href="#subsect1"><sub>a) The front page.</sub></a>
@@ -36,6 +38,29 @@
 
 --------------------------------------------
 
+<a name="#section0"></a>
+
+## 0. First step: installing LaTex. 
+
+**TinyTex** is a custom LaTex distribution based on TeX Live relatively small in size. 
+
+There are several other distributions that you install on your local machine, including [MikTex](https://miktex.org/download), [MacTex](https://www.tug.org/mactex/mactex-download.html) and [TeX Live](https://www.tug.org/texlive/quickinstall.html), but [TinyTex](https://yihui.org/tinytex/) **works best for R users, as with it you don't have to install LaTex packages which you don't actually need, and missing packages will be automatically installed on RStudio. In addition, TinyTex does not require *sysadmin* privileges.**
+
+To install or uninstall TinyTex from your local machine, this the code necessary (which you can write in your RStudio console). 
+
+````
+# get the tinytex package
+install.packages('tinytex')
+library(tinytex)
+
+# to install tinytex 
+tinytex::install_tinytex()
+
+# to uninstall tinytex
+tinytex::uninstall_tinytex()
+````
+
+Once the distribution is installed, you can move on to the next section.
 
 <a name="section1"></a>
 
@@ -43,11 +68,13 @@
 
 When you write a document, whether it's an essay, or a scientific report, or your undergraduate dissertation, it is going to be structured in different sections. 
 
-In the scientific world, these sections consist of: an introduction, methods, results, discussion, and a list of your references. If we consider a published paper or a thesis, these also contain an abstract, perhaps a section with abbreviations, and at the end present a section with supplementary information, or an appendix. 
+In the scientific world, these sections consist of: an introduction, methods, results, discussion, and bibliography. If we consider a published paper or a thesis, these also contain an abstract, perhaps a section with abbreviations, and at the end present a section with supplementary information, or an appendix. 
 
 As the aim of this tutorial is to successfully write your dissertation with Rmarkdown, it is useful to consider the number of sections necessary for your output, and to *avoid writing everything in one single .Rmd document*. 
 
 In fact, for sake of easier read and better organisation, but also faster upload of the final pdf, we are going to create multiple .Rmd files, corresponding to the main sections of the dissertation. We are then going to merge them together, within the "mother" document. 
+
+**NOTE:** if you are new to Rmarkdown, you might find our other Rmarkdown tutorial useful to do first. Click on [Getting Started with R Markdown](https://ourcodingclub.github.io/tutorials/rmarkdown/) to open the tutorial. 
 
 **First thing we are going to do is create the *main.Rmd* file (you can name the file like this, if you wish).**
 
@@ -92,6 +119,9 @@ header-includes:
   - \usepackage{fancyhdr}
   - \usepackage{lastpage}
   - \usepackage{dcolumn}
+  - \usepackage{natbib}\bibliographystyle{agsm}
+  - \usepackage[nottoc, numbib]{tocbibind}
+bibliography: bibliography.bib
 ---
 ````
 
@@ -117,8 +147,13 @@ The packages include:
 
 - [lastpage](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/lastpage/lastpage.pdf): *references the number of pages* in your LaTex document through the introduction of a new label; 
 
-- [dcolumn](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/required/tools/dcolumn.pdf): makes use of the "array" package to define a *"D" column* for use in tabular environments. 
+- [dcolumn](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/required/tools/dcolumn.pdf): makes use of the "array" package to define a *"D" column* for use in tabular environments; 
 
+- [natbib](https://www.ctan.org/pkg/natbib): provides *flexible biography support*, including both author-year and numbered references, both in-text and long-format. From the package I have also specified the **bibliographic style** to be `agsm`, which corresponds to **Harvard**. You can specify whatever style you desire, have a look at the styles available in the package [here](https://www.overleaf.com/learn/latex/Natbib_bibliography_styles); 
+
+- [tocbibind](https://www.ctan.org/pkg/tocbibind): *automatically adds the bibliography and/or index and/or the contents, etc., to the Table Of Contents (TOC) listing*. The options `nottoc` disables the inclusion of the toc (which otherwise would be a duplicate), and `numbib` makes the bibliograpgy numbered in the toc list, thus consistent with the other section titles. 
+
+The YAML also needs specifying the file containing all of your references, with the `.bib` extension. In our case, I have already created a file called `bibliography.bib`, containing a few references on the Atlantic Puffin (*Fratercula arctica*), subject of our sample dataset for this tutorial (which we are going to work with in the [appendix section](#subsect3)).
 
 Erase all the content from the RMarkdown document, **but** the first code chunk, and write the following after the first code chunk.  
 
@@ -260,11 +295,27 @@ Again, as a matter of formatting guidance, I added some specified spacing in bet
 
 In fact, by changing the font back to `\normalsize` you input the .Rmd file to go back to a 'normal' font (12 pt), since the last input you gave it was to be `\Large`. 
 
-We have created the front page, which should look like this. 
+Now that we have created the front page, you can knit the document by clicking on the **knit** button at the top of the RStudio interface, to check out the output!
+
+![knit_button](https://user-images.githubusercontent.com/43357858/112044413-17ea3d80-8b4a-11eb-8c02-43a4640ee5e7.jpg)
+
+**Don't worry if it takes time at first for the document to knit - it is normal at first and particularly if the document is heavy!**
+
+Also, **knitting can be quite buggy** at first. That is also normal as you need to get used to some common practices to write in markdown that would avoid unnecessary problems. 
+
+A few ways **to avoid debugging**: 
+
+- develop chunks and execute them until they work, before moving on to creating new ones; 
+
+- knit the document regularly to check for errors; 
+
+If there is an error, check out this webpage describing [common problems with rmarkdown (and some solutions)](https://rmd4sci.njtierney.com/common-problems-with-rmarkdown-and-some-solutions.html).
+
+Once you've successfully knitted your document, the front page should look like this. 
 
 ![front_output](https://user-images.githubusercontent.com/43357858/111608138-2eeeff80-87d9-11eb-871a-79ccfb170957.jpg)
 
-And this is the summary of the code that should be written so far in your .Rmd (YAML included).
+In case the front page isn't exatly as the image above, I have reported the **summary of the code that should be written so far in your .Rmd (YAML included)**.
 
 ````
 ---
@@ -499,7 +550,6 @@ As I hope most of you will know and know how to use by now, there are a series o
 
 The most popular and best ones (to my advice) are **Mendeley and Zotero**. One of the nice features about them is that after saving your list of references in a folder, you can export them into `BibiTex format` (**.bib**). This way, **you can directly link the content from the new `.bib` file to any document that supports LaTex syntax.**
 
-To include citations and fill in the bibliography section in our template, we need to add a few more details inside our **YAML header**. 
 
 ````
 ---
@@ -524,13 +574,7 @@ bibliography: bibliography.bib
 ---
 ````
 
-As you can see, I have added a the new package (`natbib`) in the `header-includes:` option of the YAML. Not only: I have also added `tocbibind` package, which allows you to include the bibliography in your TOC. The options `nottoc` disables the inclusion of the toc (which otherwise would be a duplicate), and `numbib` makes the bibliograpgy numbered in the toc list, thus consistent with the other section titles. 
-
- From the package I have also specified the **bibliographic style** to be `agsm`, which corresponds to **Harvard**.
-
-You can specify whatever style you desire, have a look at the styles available in the package [here](https://www.overleaf.com/learn/latex/Natbib_bibliography_styles).
-
-The YAML also needs specifying the file containing all of your references, with the `.bib` extension. In our case, I have already created a file called `bibliography.bib`, containing a few references on the Atlantic Puffin (*Fratercula arctica*), subject of our sample dataset for this tutorial (which we are going to look at in the next section).
+Recall the packages dedicated to adding a bibliography in the YAML header (`natbib` and `tocbibind`), and the specification of the .bib file containing your bibliography. 
 
 If you open **bibliography.bib**, each citation is structured as such: 
 
@@ -792,9 +836,9 @@ Thank you for following this tutorial, I hope it has helped you with creating a 
 
 ## Resources 
 
-* [Install LaTex](https://www.latex-project.org/get/)
-
 * [Install tinytex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html)
+
+* [Install LaTex](https://www.latex-project.org/get/)
 
 * [Rmarkdown cheetsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 
