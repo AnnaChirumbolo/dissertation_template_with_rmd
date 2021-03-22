@@ -54,7 +54,7 @@ In fact, for sake of easier read and better organisation, but also faster upload
 Here, we are going to set the first page of your dissertation and we are going to **link** all the other .Rmd documents containing the different sections. 
 In this file, we are also going to set the general formatting rules (written in `LaTex`), which are going to apply to the entire document.
 
-First thing to do is to download the [tutorial repo](https://github.com/AnnaChirumbolo/dissertation_template_with_rmd.git).
+All the files that you need to complete this tutorial can be downloaded from this GitHub repository [link](https://github.com/AnnaChirumbolo/dissertation_template_with_rmd.git). Clone and download the repo as a zip file, then unzip it. 
 
 **Open Rstudio and create a new .Rmd file, within the repo folder you've just downloaded**, by clicking on the blank sheet with the green plus one the left-hand side of the interface. 
 
@@ -66,7 +66,13 @@ Once you have created a new Rmarkdown document, leave title and author blank (yo
 
 You will see at the top a section called **YAML header**, delimited by three hyphens (---). The header embeds the information that you have just given (blank for the title, no author and pdf_document as your desired output), and allows you to set the rules that are going to be applied throught the document (as well as the **linked** documents). **This header will not show in the output.**
 
-The School of Geosciences provides standard formatting rules for the undergraduate dissertation document, and we are going to set the file according to them (these are as of 2020, if they have changed edit them accordingly). 
+Each university or publishing institution will have their **own formatting rules**, which you'll need to follow when structuring and writing your work. 
+
+For this tutorial, we are going to follow the **guidelines from the School of GeoSciences (University of Edinburgh)**. These are as of 2020, and if they have changed edit them accordingly, or, if you are writing for another institution, edit them according to its specific guidelines.
+
+**NOTE.** If you are writing for an institution other than university, perhaps **you are publishing your dissertation** on a scientific journal, you need to look for their "Author's Information" page as you can download their own **templates**. Here is an example of the template provided by [Nature](https://www.nature.com/sdata/publish/submission-guidelines#sec-3). 
+
+
 
 Now we need to add more details and specifications to our **YAML header** to apply to the entire to document (and its 'child' documents). 
 
@@ -166,13 +172,13 @@ knitr::include_graphics("img/uniedlogo.png")
 
 This way, the image of the UoE logo is going to appear at the top of the page. 
 
+[**Knitr**](https://yihui.org/knitr/) is the most important package used in Rmarkdown, to help you create elegant, flexible and fast report generation. If you click on the **knit** button on the top of the page, you are able to **repeatedly output your pdf** so that you can **constantly check to see how your formatting has changed** as you continue working on your Rmarkdown file! 
+
 As you can see, I have **named** the code chunk "uni_logo", making it easier to retrieve the chunk later on, when there are going to be many more. 
 
 *Echo = False* will only show the output of the code inside the code chunk, not the code itself. 
 
 *Out.width* is a feature for images and figures, in particular the percentage width that the image will occupy out of the total white space in the pdf document. 
-
-[**Knitr**](https://yihui.org/knitr/) is the only most important package used in Rmarkdown, to help you create elegant, flexible and fast report generation. 
 
 You can retrieve the image of the university logo with the function *include_graphics()*.
 
@@ -518,7 +524,7 @@ bibliography: bibliography.bib
 ---
 ````
 
-As you can see, I have added a the new package (`natbib`) in the `header-includes:` option of the YAML.Not only: I have also added `tocbibind` package, which allows you to include the bibliography in your TOC. The options `nottoc` disables the inclusion of the toc (which otherwise would be a duplicate), and `numbib` makes the bibliograpgy numbered in the toc list, thus consistent with the other section titles. 
+As you can see, I have added a the new package (`natbib`) in the `header-includes:` option of the YAML. Not only: I have also added `tocbibind` package, which allows you to include the bibliography in your TOC. The options `nottoc` disables the inclusion of the toc (which otherwise would be a duplicate), and `numbib` makes the bibliograpgy numbered in the toc list, thus consistent with the other section titles. 
 
  From the package I have also specified the **bibliographic style** to be `agsm`, which corresponds to **Harvard**.
 
@@ -771,7 +777,7 @@ Here are some final tips which I found to be **essential** when I wrote my own d
 
 2. Make sure you have [LaTex](https://www.latex-project.org/get/) and [tinytex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html) installed to be able to **create pdf documents from rmarkdown**. Without it, it just won't work; 
 
-3. **NEVER** write your content directly onto Rmarkdown! As much as it might seem faster, Rmarkdown does not provide a spell checker by default, and you might take longer than expected in ultimating and finalising your drafts. **Plan the strcuture, the code that you want to include, the layout of each section to be written on Rmd**, but **always** have the text saved and written on a word document first. It is much easier and quicker to paste in your content, once you're 100% sure it is ready for submission; 
+3. **NEVER** write your content directly onto Rmarkdown! As much as it might seem faster, Rmarkdown does not provide a spell checker by default, and you might take longer than expected in ultimating and finalising your drafts. **Plan the structure, the code that you want to include, the layout of each section to be written on Rmd**, but **always** have the text saved and written on a word document first. It is much easier and quicker to paste in your content, once you're 100% sure it is ready for submission; 
 
 4. **Before** knitting the main document, have a look at it, once, twice, three, four times... and more! This document will present many sections, and the smallest spelling mistake might crash your whole work. Since it's going to be a large document, knit it a few times, only when necessary, and definitely when you're sure to be priniting your final pdf; 
 
