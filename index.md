@@ -784,7 +784,10 @@ Here are some final tips which I found to be **essential** when I wrote my own d
 5. **Don't submit last minute!!!** This rule would apply to any submission scenario, really. However, take your time to check for errors and debugging, if need be. You don't want to find yourself at the end with errors that won't allow you knit your pdf and submit your work on time. 
 
 
-You can check out my dissertation written in Rmarkdown by [clicking here](https://github.com/AnnaChirumbolo/Dissertation/blob/master/AnnaChirumbolo_dissertation.pdf)
+You can check out my dissertation written in Rmarkdown by [clicking here](https://github.com/AnnaChirumbolo/Dissertation/blob/master/AnnaChirumbolo_dissertation.pdf).
+
+
+Thank you for following this tutorial, I hope it has helped you with creating a nice and professional template for writing your work. **Good luck** with your submission and **congratualations**!
 
 
 ## Resources 
