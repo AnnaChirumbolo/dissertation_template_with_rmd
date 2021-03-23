@@ -153,7 +153,7 @@ The packages include:
 
 - [tocbibind](https://www.ctan.org/pkg/tocbibind): *automatically adds the bibliography and/or index and/or the contents, etc., to the Table Of Contents (TOC) listing*. The options `nottoc` disables the inclusion of the toc (which otherwise would be a duplicate), and `numbib` makes the bibliograpgy numbered in the toc list, thus consistent with the other section titles. 
 
-The YAML also needs specifying the file containing all of your references, with the `.bib` extension. In our case, I have already created a file called `bibliography.bib`, containing a few references on the Atlantic Puffin (*Fratercula arctica*), subject of our sample dataset for this tutorial (which we are going to work with in the [appendix section](#subsect3)).
+The YAML also needs specifying the file containing all of your references, with the `.bib` extension. In our case, I have already created a file called `bibliography.bib`, containing a few references on the Atlantic Puffin (*Fratercula arctica*), subject of our sample dataset for this tutorial (which we are going to work with in the [appendix section](#subsect3)). Check out the [bibliograpgies and citations section](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) from the *Rmarkdown Cookbook*, if you'd like to dive deeper into the topic.
 
 Erase all the content from the RMarkdown document, **but** the first code chunk, and write the following after the first code chunk.  
 
@@ -319,10 +319,10 @@ In case the front page isn't exatly as the image above, I have reported the **su
 
 ````
 ---
-title: ''
-output: 
+title: " "
+output:
   pdf_document:
-        number_sections: TRUE
+    number_sections: TRUE
 geometry: "left = 2.5cm, right = 2cm, top = 2cm, bottom = 2cm"
 fontsize: 11pt
 header-includes:
@@ -333,6 +333,9 @@ header-includes:
   - \usepackage{fancyhdr}
   - \usepackage{lastpage}
   - \usepackage{dcolumn}
+  - \usepackage{natbib}\bibliographystyle{agsm}
+  - \usepackage[nottoc, numbib]{tocbibind}
+bibliography: bibliography.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -399,7 +402,7 @@ mm yy
 
 ### b) Abstract
 
-We can add the Abstract on a new page, by specifying this LaTex command. **Remember to start writing outside of the centering command from now on.** 
+We can add the Abstract on a [new page](https://bookdown.org/yihui/rmarkdown-cookbook/pagebreaks.html), by specifying this LaTex command. **Remember to start writing outside of the centering command from now on.** 
 
 ````
 \newpage
@@ -650,6 +653,8 @@ And check out the table of contents, with bibliography being included and number
 
 ![addedbiblio_toc](https://user-images.githubusercontent.com/43357858/111704217-10bbea80-883f-11eb-9c79-bd65f958de52.jpg)
 
+Finally, here are useful links from the *Rmarkdown Cookbook* on [generating R package citations](https://bookdown.org/yihui/rmarkdown-cookbook/write-bib.html) and [cross-referencing within documents](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html), which are not covered in this tutorial. 
+
 <a name="subsect3"></a>
 
 ### The appendix. 
@@ -819,7 +824,7 @@ Here are some final tips which I found to be **essential** when I wrote my own d
 
 1. I have not talked about in detail in this tutorial, but the **Abbreviations** section (it comes **after the TOC and acknowledgments**) can be very useful in your dissertation if you need to talk about many variables and features and need a way to speed things up (and save word count); 
 
-2. Make sure you have [LaTex](https://www.latex-project.org/get/) and [tinytex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html) installed to be able to **create pdf documents from rmarkdown**. Without it, it just won't work; 
+2. Make sure you have [TinyTex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html) installed to be able to **create pdf documents from rmarkdown**. Without it, it just won't work. Remember that TinyTex is sufficient and is the best distribution for us R users;
 
 3. **NEVER** write your content directly onto Rmarkdown! As much as it might seem faster, Rmarkdown does not provide a spell checker by default, and you might take longer than expected in ultimating and finalising your drafts. **Plan the structure, the code that you want to include, the layout of each section to be written on Rmd**, but **always** have the text saved and written on a word document first. It is much easier and quicker to paste in your content, once you're 100% sure it is ready for submission; 
 
@@ -836,9 +841,9 @@ Thank you for following this tutorial, I hope it has helped you with creating a 
 
 ## Resources 
 
-* [Install tinytex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html)
+* [Install TinyTex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html)
 
-* [Install LaTex](https://www.latex-project.org/get/)
+* [The Rmarkdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
 
 * [Rmarkdown cheetsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 
