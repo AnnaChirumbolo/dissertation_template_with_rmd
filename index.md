@@ -38,7 +38,7 @@
 
 --------------------------------------------
 
-<a name="#section0"></a>
+<a name="section0"></a>
 
 ## 0. First step: installing LaTex. 
 
