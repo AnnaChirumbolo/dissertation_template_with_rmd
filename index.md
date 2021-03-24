@@ -828,19 +828,21 @@ Here are some final tips which I found to be **essential** when I wrote my own d
 
 1. I have not talked about in detail in this tutorial, but the **Abbreviations** section (it comes **after the TOC and acknowledgments**) can be very useful in your dissertation if you need to talk about many variables and features and need a way to speed things up (and save word count); 
 
-2. Make sure you have [TinyTex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html) installed to be able to **create pdf documents from rmarkdown**. Without it, it just won't work. Remember that TinyTex is sufficient and is the best distribution for us R users;
+2. If you need to write **mathematical formulas or equations**, I suggest you check out this [link](https://bookdown.org/yihui/bookdown/markdown-syntax.html#math-expressions) on *math expressions* and [this one](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations) on *markdown extensions to support math equations*. Here is a [list of LaTex mathematical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols) for you to explore, and here is a link to [convert models to general equations](https://bookdown.org/yihui/rmarkdown-cookbook/equatiomatic.html);
 
-3. **NEVER** write your content directly onto Rmarkdown! As much as it might seem faster, Rmarkdown does not provide a spell checker by default, and you might take longer than expected in ultimating and finalising your drafts. **Plan the structure, the code that you want to include, the layout of each section to be written on Rmd**, but **always** have the text saved and written on a word document first. It is much easier and quicker to paste in your content, once you're 100% sure it is ready for submission; 
+3. Make sure you have [TinyTex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html) installed to be able to **create pdf documents from rmarkdown**. Without it, it just won't work. Remember that TinyTex is sufficient and is the best distribution for us R users;
 
-4. **Before** knitting the main document, have a look at it, once, twice, three, four times... and more! This document will present many sections, and the smallest spelling mistake might crash your whole work. Since it's going to be a large document, knit it a few times, only when necessary, and definitely when you're sure to be priniting your final pdf; 
+4. **NEVER** write your content directly onto Rmarkdown! As much as it might seem faster, Rmarkdown does not provide a spell checker by default, and you might take longer than expected in ultimating and finalising your drafts. **Plan the structure, the code that you want to include, the layout of each section to be written on Rmd**, but **always** have the text saved and written on a word document first. It is much easier and quicker to paste in your content, once you're 100% sure it is ready for submission; 
 
-5. **Don't submit last minute!!!** This rule would apply to any submission scenario, really. However, take your time to check for errors and debugging, if need be. You don't want to find yourself at the end with errors that won't allow you knit your pdf and submit your work on time. 
+5. **Before** knitting the main document, have a look at it, once, twice, three, four times... and more! This document will present many sections, and the smallest spelling mistake might crash your whole work. Since it's going to be a large document, knit it a few times, only when necessary, and definitely when you're sure to be priniting your final pdf; 
+
+6. **Don't submit last minute!!!** This rule would apply to any submission scenario, really. However, take your time to check for errors and debugging, if need be. You don't want to find yourself at the end with errors that won't allow you knit your pdf and submit your work on time. 
 
 
 You can check out my dissertation written in Rmarkdown by [clicking here](https://github.com/AnnaChirumbolo/Dissertation/blob/master/AnnaChirumbolo_dissertation.pdf).
 
 
-Thank you for following this tutorial, I hope it has helped you with creating a nice and professional template for writing your work. **Good luck** with your submission and **congratualations**!
+Thank you for following this tutorial, I hope it has helped you with creating a nice and professional template for writing your work. **Good luck** with your submission and **congratualations** for completing your studies!
 
 
 ## Resources 
