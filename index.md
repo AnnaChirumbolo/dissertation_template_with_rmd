@@ -814,7 +814,7 @@ Make sure **that all the text we've written so far is spelled correctly**, and b
 
 Now you can fill the sections in with your own content and your personal touch. 
 
-In the meantime, [this]() is what your output should look like at the end of this tutorial. 
+In the meantime, [this](/output/output.pdf) is what your output should look like at the end of this tutorial. 
 
 <a name="section5"></a>
 
