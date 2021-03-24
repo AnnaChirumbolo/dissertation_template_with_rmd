@@ -38,7 +38,7 @@
 
 --------------------------------------------
 
-<a name="#section0"></a>
+<a name="section0"></a>
 
 ## 0. First step: installing LaTex. 
 
@@ -91,15 +91,13 @@ Once you have created a new Rmarkdown document, leave title and author blank (yo
 
 ![opening_md](https://user-images.githubusercontent.com/43357858/111620941-a75cbd00-87e7-11eb-84cc-6f4e51be7a31.jpg)
 
-You will see at the top a section called **YAML header**, delimited by three hyphens (---). The header embeds the information that you have just given (blank for the title, no author and pdf_document as your desired output), and allows you to set the rules that are going to be applied throught the document (as well as the **linked** documents). **This header will not show in the output.**
+You will see at the top a section called **YAML header**, delimited by three hyphens (---). The header embeds the information that you have just given (blank for the title, no author and pdf_document as your desired output), and allows you to set the "rules" that are going to be applied throught the document (as well as the **linked** documents). Basically, the information you are going to insert here defines the **metadata** of your document: its content will affect the code, content and the rendering process of the document, but itself *will not show* in the output.** Check out the *Rmarkdown Cookbook* on [YAML metadata](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata), if you wish to find out more. This [link](https://cran.r-project.org/web/packages/ymlthis/vignettes/yaml-fieldguide.html) offers you an exhaustive **fieldguide of possible YAML arguments** - check it out to have a better understanding of the kinds of metadata you can input in your document.
 
 Each university or publishing institution will have their **own formatting rules**, which you'll need to follow when structuring and writing your work. 
 
 For this tutorial, we are going to follow the **guidelines from the School of GeoSciences (University of Edinburgh)**. These are as of 2020, and if they have changed edit them accordingly, or, if you are writing for another institution, edit them according to its specific guidelines.
 
 **NOTE.** If you are writing for an institution other than university, perhaps **you are publishing your dissertation** on a scientific journal, you need to look for their "Author's Information" page as you can download their own **templates**. Here is an example of the template provided by [Nature](https://www.nature.com/sdata/publish/submission-guidelines#sec-3). 
-
-
 
 Now we need to add more details and specifications to our **YAML header** to apply to the entire to document (and its 'child' documents). 
 
@@ -296,6 +294,8 @@ Again, as a matter of formatting guidance, I added some specified spacing in bet
 In fact, by changing the font back to `\normalsize` you input the .Rmd file to go back to a 'normal' font (12 pt), since the last input you gave it was to be `\Large`. 
 
 Now that we have created the front page, you can knit the document by clicking on the **knit** button at the top of the RStudio interface, to check out the output!
+
+If you're interested, check out the chapter [*what happens when we render*](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-process.html) from *Rmarkdown Cookbook*, to find out about the workflow from `.Rmd` to `.pdf` (or another output format). 
 
 ![knit_button](https://user-images.githubusercontent.com/43357858/112044413-17ea3d80-8b4a-11eb-8c02-43a4640ee5e7.jpg)
 
@@ -847,6 +847,10 @@ Thank you for following this tutorial, I hope it has helped you with creating a 
 
 * [Rmarkdown cheetsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 
+* [Pdf document (Rmarkdown)](https://bookdown.org/yihui/rmarkdown/pdf-document.html)
+
+* [The YAML Fieldguide](https://cran.r-project.org/web/packages/ymlthis/vignettes/yaml-fieldguide.html)
+
 * [LaTex syntax](https://www.overleaf.com/learn/latex/Commands)
 
 * [Html syntax](https://www.w3schools.com/html/html5_syntax.asp)
@@ -857,4 +861,3 @@ Thank you for following this tutorial, I hope it has helped you with creating a 
 
 * [ViridisLite package](https://cran.r-project.org/web/packages/viridisLite/viridisLite.pdf)
 
-* [Pdf document (Rmarkdown)](https://bookdown.org/yihui/rmarkdown/pdf-document.html)
