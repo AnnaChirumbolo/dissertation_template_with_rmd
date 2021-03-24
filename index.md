@@ -802,7 +802,11 @@ labs = setdiff(labs, c("setup", "get-labels")) # this function excludes the code
 ```
 ~~~~
 
+Here you can see how it's written in Rstudio...
+
 ![appendixC_code](https://user-images.githubusercontent.com/43357858/111608465-89885b80-87d9-11eb-8830-14219682a2fb.jpg)
+
+...and this is what it looks like when you knit the pdf!
 
 ![appendixC_code_output](https://user-images.githubusercontent.com/43357858/111608601-b2105580-87d9-11eb-94ac-a35b472346a0.jpg)
 
