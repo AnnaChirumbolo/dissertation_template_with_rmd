@@ -847,6 +847,10 @@ Thank you for following this tutorial, I hope it has helped you with creating a 
 
 * [Rmarkdown cheetsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 
+* [Pdf document (Rmarkdown)](https://bookdown.org/yihui/rmarkdown/pdf-document.html)
+
+* [The YAML Fieldguide](https://cran.r-project.org/web/packages/ymlthis/vignettes/yaml-fieldguide.html)
+
 * [LaTex syntax](https://www.overleaf.com/learn/latex/Commands)
 
 * [Html syntax](https://www.w3schools.com/html/html5_syntax.asp)
@@ -857,4 +861,3 @@ Thank you for following this tutorial, I hope it has helped you with creating a 
 
 * [ViridisLite package](https://cran.r-project.org/web/packages/viridisLite/viridisLite.pdf)
 
-* [Pdf document (Rmarkdown)](https://bookdown.org/yihui/rmarkdown/pdf-document.html)
