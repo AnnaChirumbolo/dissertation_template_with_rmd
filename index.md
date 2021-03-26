@@ -43,7 +43,7 @@
 ## 0. First step: installing LaTex. 
 
 
-**TinyTex** is a custom LaTex distribution based on TeX Live relatively small in size. 
+**TinyTex** is a custom LaTex distribution based on TeX Live, relatively small in size. 
 
 There are several other distributions that you install on your local machine, including [MikTex](https://miktex.org/download), [MacTex](https://www.tug.org/mactex/mactex-download.html) and [TeX Live](https://www.tug.org/texlive/quickinstall.html), but [TinyTex](https://yihui.org/tinytex/) **works best for R users, as with it you don't have to install LaTex packages which you don't need, and missing packages will be automatically installed on RStudio. Also, TinyTex does not require *sysadmin* privileges.**
 
