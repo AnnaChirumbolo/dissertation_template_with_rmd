@@ -42,9 +42,10 @@
 
 ## 0. First step: installing LaTex. 
 
+
 **TinyTex** is a custom LaTex distribution based on TeX Live relatively small in size. 
 
-There are several other distributions that you install on your local machine, including [MikTex](https://miktex.org/download), [MacTex](https://www.tug.org/mactex/mactex-download.html) and [TeX Live](https://www.tug.org/texlive/quickinstall.html), but [TinyTex](https://yihui.org/tinytex/) **works best for R users, as with it you don't have to install LaTex packages which you don't actually need, and missing packages will be automatically installed on RStudio. In addition, TinyTex does not require *sysadmin* privileges.**
+There are several other distributions that you install on your local machine, including [MikTex](https://miktex.org/download), [MacTex](https://www.tug.org/mactex/mactex-download.html) and [TeX Live](https://www.tug.org/texlive/quickinstall.html), but [TinyTex](https://yihui.org/tinytex/) **works best for R users, as with it you don't have to install LaTex packages which you don't need, and missing packages will be automatically installed on RStudio. Also, TinyTex does not require *sysadmin* privileges.**
 
 To install or uninstall TinyTex from your local machine, this the code necessary (which you can write in your RStudio console). 
 
@@ -68,38 +69,38 @@ Once the distribution is installed, you can move on to the next section.
 
 When you write a document, whether it's an essay, or a scientific report, or your undergraduate dissertation, it is going to be structured in different sections. 
 
-In the scientific world, these sections consist of: an introduction, methods, results, discussion, and bibliography. If we consider a published paper or a thesis, these also contain an abstract, perhaps a section with abbreviations, and at the end present a section with supplementary information, or an appendix. 
+In the scientific world, these sections consist of: an introduction, methods, results, discussion, and bibliography. If we consider a published paper or a thesis, these also contain an abstract, perhaps a section with abbreviations, and at the end present a section with supplementary information or an appendix. 
 
-As the aim of this tutorial is to successfully write your dissertation with Rmarkdown, it is useful to consider the number of sections necessary for your output, and to *avoid writing everything in one single .Rmd document*. 
+As the aim of this tutorial is to successfully write your dissertation with Rmarkdown, it is useful to consider the number of sections necessary for your output and to *avoid writing everything in one single.Rmd document*. 
 
-In fact, for sake of easier read and better organisation, but also faster upload of the final pdf, we are going to create multiple .Rmd files, corresponding to the main sections of the dissertation. We are then going to merge them together, within the "mother" document. 
+In fact, for sake of easier read and better organisation, but also faster upload of the final pdf, we are going to create multiple .Rmd files, corresponding to the main sections of the dissertation. We are then going to merge them, within the "mother" document. 
 
 **NOTE:** if you are new to Rmarkdown, you might find our other Rmarkdown tutorial useful to do first. Click on [Getting Started with R Markdown](https://ourcodingclub.github.io/tutorials/rmarkdown/) to open the tutorial. 
 
-**First thing we are going to do is create the *main.Rmd* file (you can name the file like this, if you wish).**
+**First thing we are going to do is to create the *main.Rmd* file (you can name the file like this if you wish).**
 
 Here, we are going to set the first page of your dissertation and we are going to **link** all the other .Rmd documents containing the different sections. 
 In this file, we are also going to set the general formatting rules (written in `LaTex`), which are going to apply to the entire document.
 
 All the files that you need to complete this tutorial can be downloaded from this GitHub repository [link](https://github.com/AnnaChirumbolo/dissertation_template_with_rmd.git). Clone and download the repo as a zip file, then unzip it. 
 
-**Open Rstudio and create a new .Rmd file, within the repo folder you've just downloaded**, by clicking on the blank sheet with the green plus one the left-hand side of the interface. 
+**Open Rstudio and create a new .Rmd file, within the repo folder you've just downloaded**, by clicking on the blank sheet with the green plus one on the left-hand side of the interface. 
 
 <img width="1280" alt="open_md" src="https://user-images.githubusercontent.com/43357858/111072154-91928380-84d9-11eb-8dd7-6cee402bd889.png">
 
-Once you have created a new Rmarkdown document, leave title and author blank (you don't want these to appear at the top of your pdf) and select PDF as the Default Output Format. Click OK and let's start writing in the new file.
+Once you have created a new Rmarkdown document, leave the title and author blank (you don't want these to appear at the top of your pdf) and select PDF as the Default Output Format. Click OK and let's start writing in the new file.
 
 ![opening_md](https://user-images.githubusercontent.com/43357858/111620941-a75cbd00-87e7-11eb-84cc-6f4e51be7a31.jpg)
 
-You will see at the top a section called **YAML header**, delimited by three hyphens (---). The header embeds the information that you have just given (blank for the title, no author and pdf_document as your desired output), and allows you to set the "rules" that are going to be applied throught the document (as well as the **linked** documents). Basically, the information you are going to insert here defines the **metadata** of your document: its content will affect the code, content and the rendering process of the document, but itself *will not show* in the output.** Check out the *Rmarkdown Cookbook* on [YAML metadata](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata), if you wish to find out more. This [link](https://cran.r-project.org/web/packages/ymlthis/vignettes/yaml-fieldguide.html) offers you an exhaustive **fieldguide of possible YAML arguments** - check it out to have a better understanding of the kinds of metadata you can input in your document.
+You will see at the top a section called **YAML header**, delimited by three hyphens (---). The header embeds the information that you have just given (blank for the title, no author and pdf_document as your desired output), and allows you to set the "rules" that are going to be applied throughout the document (as well as the **linked** documents). The information you are going to insert here defines the **metadata** of your document: its content will affect the code, content and the rendering process of the document, but itself *will not show* in the output.** Check out the *Rmarkdown Cookbook* on [YAML metadata](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata), if you wish to find out more. This [link](https://cran.r-project.org/web/packages/ymlthis/vignettes/yaml-fieldguide.html) offers you an exhaustive **field guide of possible YAML arguments** - check it out to have a better understanding of the kinds of metadata you can input in your document.
 
 Each university or publishing institution will have their **own formatting rules**, which you'll need to follow when structuring and writing your work. 
 
-For this tutorial, we are going to follow the **guidelines from the School of GeoSciences (University of Edinburgh)**. These are as of 2020, and if they have changed edit them accordingly, or, if you are writing for another institution, edit them according to its specific guidelines.
+For this tutorial, we are going to follow the **guidelines from the School of GeoSciences (University of Edinburgh)**. These are as of 2020 - if they have changed edit them accordingly, or, if you are writing for another institution, edit them according to its specific guidelines.
 
 **NOTE.** If you are writing for an institution other than university, perhaps **you are publishing your dissertation** on a scientific journal, you need to look for their "Author's Information" page as you can download their own **templates**. Here is an example of the template provided by [Nature](https://www.nature.com/sdata/publish/submission-guidelines#sec-3). 
 
-Now we need to add more details and specifications to our **YAML header** to apply to the entire to document (and its 'child' documents). 
+We need to add more details and specifications to our **YAML header** to apply to the entire to document (and its 'child' documents). 
 
 ````
 ---
@@ -127,7 +128,7 @@ bibliography: bibliography.bib
 
 - **geometry**: sets margin sides for pdf output (according to School of Geosciences guidelines); 
 
-- **fontsize**: sets entire font throughout the document to be 11 pt. You can change that in the file for specific sections of your choosing; 
+- **fontsize**: sets the entire font throughout the document to be 11 pt. You can change that in the file for specific sections of your choosing; 
 
 - **header-includes**: allows you to specify all the **LaTex** packages you are going to need in your file. In this way, you can keep all the specifics inside your main .Rmd document and they **will apply to the child documents, too**. 
 
@@ -141,17 +142,17 @@ The packages include:
 
 - [setspace](https://www.ctan.org/pkg/setspace): provides support for *setting spacing between lines* in a document. Options include \singlespacing, \onehalfspacing and \doublespacing commands (which we'll see below). As you can see, I've already set the general rule to be 1.5 spacing (as per university guidelines); 
 
-- [fancyhdr](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/fancyhdr/fancyhdr.pdf): the package provides extensive facilities, both for *constructing headers and footers, and for controlling their use*; 
+- [fancyhdr](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/fancyhdr/fancyhdr.pdf): the package provides extensive facilities, both for *constructing headers and footers and for controlling their use*; 
 
 - [lastpage](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/lastpage/lastpage.pdf): *references the number of pages* in your LaTex document through the introduction of a new label; 
 
 - [dcolumn](https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/required/tools/dcolumn.pdf): makes use of the "array" package to define a *"D" column* for use in tabular environments; 
 
-- [natbib](https://www.ctan.org/pkg/natbib): provides *flexible biography support*, including both author-year and numbered references, both in-text and long-format. From the package I have also specified the **bibliographic style** to be `agsm`, which corresponds to **Harvard**. You can specify whatever style you desire, have a look at the styles available in the package [here](https://www.overleaf.com/learn/latex/Natbib_bibliography_styles); 
+- [natbib](https://www.ctan.org/pkg/natbib): provides *flexible biography support*, including both author-year and numbered references, both in-text and long-format. From the package, I have also specified the **bibliographic style** to be `agsm`, which corresponds to **Harvard**. You can specify whatever style you desire, have a look at the styles available in the package [here](https://www.overleaf.com/learn/latex/Natbib_bibliography_styles); 
 
 - [tocbibind](https://www.ctan.org/pkg/tocbibind): *automatically adds the bibliography and/or index and/or the contents, etc., to the Table Of Contents (TOC) listing*. The options `nottoc` disables the inclusion of the toc (which otherwise would be a duplicate), and `numbib` makes the bibliograpgy numbered in the toc list, thus consistent with the other section titles. 
 
-The YAML also needs specifying the file containing all of your references, with the `.bib` extension. In our case, I have already created a file called `bibliography.bib`, containing a few references on the Atlantic Puffin (*Fratercula arctica*), subject of our sample dataset for this tutorial (which we are going to work with in the [appendix section](#subsect3)). Check out the [bibliograpgies and citations section](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) from the *Rmarkdown Cookbook*, if you'd like to dive deeper into the topic.
+The YAML also needs to specify the file containing all of your references, with the `.bib` extension. In our case, I have already created a file called `bibliography.bib`, containing a few references on the Atlantic Puffin (*Fratercula arctica*), subject of our sample dataset for this tutorial (which we are going to work within the [appendix section](#subsect3)). Check out the [bibliograpgies and citations section](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) from the *Rmarkdown Cookbook*, if you'd like to dive deeper into the topic.
 
 Erase all the content from the RMarkdown document, **but** the first code chunk, and write the following after the first code chunk.  
 
@@ -163,9 +164,9 @@ Erase all the content from the RMarkdown document, **but** the first code chunk,
 \pagenumbering{gobble} 
 ````
 
-The `\allsectionsfont` command specifies changes to your header font - in this case to have them centered. Instead, we have specified `\subsectionfont` and `\subsubsectionfont` (for sub-headers) to be ragged right.  
+The `\allsectionsfont` command specifies changes to your header font - in this case, to have them centred. Instead, we have specified `\subsectionfont` and `\subsubsectionfont` (for sub-headers) to be ragged right.  
 
-`\pagenumbering{gobble}`, instead, **does not print any page number**, and this is ideal for the moment, as we are about to create the front page, which does not require one. Remember though, `gobble` option in the `pagenumbering` command has the side effect to reset the page number to 1 - so it is unlikely to be helpful **other than at the beginning of your document!**
+`\pagenumbering{gobble}`, instead, **does not print any page number**, and this is ideal for the moment, as we are about to create the front page, which does not require one. Remember though, the `gobble` option in the `pagenumbering` command has the side effect to reset the page number to 1 - so it is unlikely to be helpful **other than at the beginning of your document!**
 
 <a name="subsect1"></a>
 
@@ -181,11 +182,11 @@ The front page requires all elements to be **centred**. We are going to start us
 \end{centering}
 ````
 
-This is written in LaTex. We are defining a space in the document, **within** which anything we will write will be centered on the page. 
+This is written in LaTex. We are defining a space in the document, **within** which anything we will write will be centred on the page. 
 
-To be clearer, the content of the front page is all **inside the `begin` and `end` centering** commands. The `\begin{centering}` has to be at the **top** and `\end{centering}` needs to be at the **bottom** in the **the front page**.
+To be clearer, the content of the front page is all **inside the `begin` and `end` centring** commands. The `\begin{centering}` has to be at the **top** and `\end{centering}` needs to be at the **bottom** in the **the front page**.
 
-**In between** the `\begin{centering}` and `\end{centering}` we are going to specify a 3 cm spacing from the top of the page, to then insert the first element: the university logo. 
+**In between** the `\begin{centring}` and `\end{centring}` we are going to specify a 3 cm spacing from the top of the page, to then insert the first element: the university logo. 
 
 ````
 \vspace{3cm}
@@ -205,7 +206,7 @@ knitr::include_graphics("img/uniedlogo.png")
 
 This way, the image of the UoE logo is going to appear at the top of the page. 
 
-[**Knitr**](https://yihui.org/knitr/) is the most important package used in Rmarkdown, to help you create elegant, flexible and fast report generation. If you click on the **knit** button on the top of the page, you are able to **repeatedly output your pdf** so that you can **constantly check to see how your formatting has changed** as you continue working on your Rmarkdown file! 
+[**Knitr**](https://yihui.org/knitr/) is the most important package used in Rmarkdown, to help you create elegant, flexible and fast report generation. If you click on the **Knit** button on the top of the page, you are able to **repeatedly output your pdf** so that you can **constantly check to see how your formatting has changed** as you continue working on your Rmarkdown file! 
 
 As you can see, I have **named** the code chunk "uni_logo", making it easier to retrieve the chunk later on, when there are going to be many more. 
 
@@ -256,13 +257,13 @@ It's time to add the *title* of your dissertation! I have written mine below jus
 {\bf COMPARISON OF TOP-DOWN AND BOTTOM-UP APPROACHES ON SPECIFIC LEAF AREA PATTERNS, \\AT GLOBAL, LATITUDINAL, AND BIOME SCALES}
 ````
 
-As you might have figured, adding \doublespacing will double the space between lines of text. By wrapping a specific part of your text within curly brackets and adding the function \bf at the start, you will specify that **only** that part of the text will need be in bold. 
+As you might have figured, adding \doublespacing will double the space between lines of text. By wrapping a specific part of your text within curly brackets and adding the function \bf at the start, you will specify that **only** that part of the text will need to be in bold. 
 
 This link explains in more detail the different ways to do [simple text formatting](https://www.overleaf.com/learn/latex/Bold,_italics_and_underlining).
 
 The university guidelines specify to have the title **all capitalised**. And finally, the `\\` sign will break the text onto a new line (just like \n for a string in R code!).
 
-To finish up the front page we need to add author, degree and date! 
+To finish up the front page we need to add the author, degree and date! 
 
 ````
 \vspace{1 cm}
@@ -293,7 +294,7 @@ Again, as a matter of formatting guidance, I added some specified spacing in bet
 
 In fact, by changing the font back to `\normalsize` you input the .Rmd file to go back to a 'normal' font (12 pt), since the last input you gave it was to be `\Large`. 
 
-Now that we have created the front page, you can knit the document by clicking on the **knit** button at the top of the RStudio interface, to check out the output!
+Now that we have created the front page, you can knit the document by clicking on the **Knit** button at the top of the RStudio interface, to check out the output!
 
 If you're interested, check out the chapter [*what happens when we render*](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-process.html) from *Rmarkdown Cookbook*, to find out about the workflow from `.Rmd` to `.pdf` (or another output format). 
 
@@ -315,7 +316,7 @@ Once you've successfully knitted your document, the front page should look like 
 
 ![front_output](https://user-images.githubusercontent.com/43357858/111608138-2eeeff80-87d9-11eb-871a-79ccfb170957.jpg)
 
-In case the front page isn't exatly as the image above, I have reported the **summary of the code that should be written so far in your .Rmd (YAML included)**.
+In case the front page isn't exactly as the image above, I have reported the **summary of the code that should be written so far in your .Rmd (YAML included)**.
 
 ````
 ---
@@ -464,7 +465,7 @@ Below, I have specified the syntax for including the toc, which is very straight
 \tableofcontents
 ````
 
-I have included the `roman` option in the `pagenumbering` command, telling the document that from now on, it can start numering the pages, roman way. 
+I have included the `roman` option in the `pagenumbering` command, telling the document that from now on, it can start numbering the pages, roman way. 
 
 The remaining syntax prepares a new page for writing the toc - it is created automatically, and will identify headers and subheaders according to how you have written them (see [markdown syntax](https://github.com/tchapi/markdown-cheatsheet) for headers and subheaders). 
 
@@ -527,11 +528,11 @@ In the main document, paste the following after the toc section you created just
 ```
 ````
 
-As you can see, we've just added a code chunk for each section of your dissertation. The "child" feature specified in the code chunk options, links the **content** of this other .Rmd file to the main one. This means that once you'll knit the main document, the **content from each of the child documents will be pasted and marged into one, final pdf**. 
+As you can see, we've just added a code chunk for each section of your dissertation. The "child" feature specified in the code chunk options, links the **content** of this other .Rmd file to the main one. This means that once you'll knit the main document, the **content from each of the child documents will be pasted and merged into one, final pdf**. 
 
-Also **note** that from the introduction onwards I've changed the pagenumbering to arabic. You are going to see that in your pdf, the main sections are going to be numbered in arabic, compared to the introductory pages (abstract, toc, acknowledgments), which are numbered in roman.
+Also, **note** that from the introduction onwards I've changed the pagenumbering to Arabic. You are going to see that in your pdf, the main sections are going to be numbered in Arabic, compared to the introductory pages (abstract, toc, acknowledgements), which are numbered in roman.
 
-However, remember to make sure you've created **all** .Rmd files that you have **specified** in your main file, and **check the spelling**! As you can imagine, non-existing or mispelled files which you will try to link to the main document will result in an error, whenever you will try to knit to pdf. 
+However, remember to make sure you've created **all** .Rmd files that you have **specified** in your main file and **check the spelling**! As you can imagine, non-existing or misspelt files which you will try to link to the main document will result in an error, whenever you will try to knit to pdf. 
 
 To speed things up a little, I have created the files already and you can see them in the [repository](https://github.com/AnnaChirumbolo/dissertation_template_with_rmd). Knitting the document now, you should see how the content from each has been pasted into one main document.
 
@@ -547,12 +548,11 @@ For any scientific report and article, citing your sources and creating a list o
 
 We are going to do the same for our template. 
 
-When creating and managing a bibiliography in LaTex, we use the package `natbib` for customising citations, when using `BibiTex`. [BibiTex](http://www.bibtex.org/) is a tool and file format used to describe and process lists of references, mostly **in conjunction with LaTex documents.**
+When creating and managing a bibliography in LaTex, we use the package `natbib` for customising citations, when using `BibiTex`. [BibiTex](http://www.bibtex.org/) is a tool and file format used to describe and process lists of references, mostly **in conjunction with LaTex documents.**
 
 As I hope most of you will know and know how to use by now, there are a series of **reference managers** freely available to download, which ease and speed up the amount of time you are going to spend referencing and citing in your work. 
 
 The most popular and best ones (to my advice) are **Mendeley and Zotero**. One of the nice features about them is that after saving your list of references in a folder, you can export them into `BibiTex format` (**.bib**). This way, **you can directly link the content from the new `.bib` file to any document that supports LaTex syntax.**
-
 
 ````
 ---
@@ -642,14 +642,13 @@ Open the `bibliography.Rmd` file and paste this simple command.
 ```
 \bibliography{bibliography}
 ```
+**Note** that the name of the file containing our list of references has to be included without the .bib extension in the `\bibliography` command. This command takes the whole content from the list and turns it into the Harvard long-format style of referencing. In alphabetical order, of course. 
 
-**Note** that the name of the file containing our list of references has to be included without the .bib extension in the `\bibliography` command. This command takes the whole content from the list and turns into the Harvard long-format style of referencing. In alphabetical order, of course. 
-
-This is your ouput in the bibliography section. 
+This is your output in the bibliography section. 
 
 ![biblio_long](https://user-images.githubusercontent.com/43357858/111703918-a4d98200-883e-11eb-9aa3-e8ac9372c5dc.jpg)
 
-And check out the table of contents, with bibliography being included and numbered (thanks to `numbib` option in the `tocbibbind` package). 
+And check out the table of contents, with the bibliography being included and numbered (thanks to `numbib` option in the `tocbibbind` package). 
 
 ![addedbiblio_toc](https://user-images.githubusercontent.com/43357858/111704217-10bbea80-883f-11eb-9c79-bd65f958de52.jpg)
 
@@ -659,9 +658,9 @@ Finally, here are useful links from the *Rmarkdown Cookbook* on [generating R pa
 
 ### The appendix. 
 
-As an example of child document, we are going to structure a section that we do not often work with, because it is optional, albeit very useful - the appendix. You might decide to include it or not in your final dissertation, but what you're going to learn from now on applies to any section of your document. 
+As an example of a child document, we are going to structure a section that we do not often work with, because it is optional, albeit very useful - the appendix. You might decide to include it or not in your final dissertation, but what you're going to learn from now on applies to any section of your document. 
 
-However, there are some general rules that apply to the appendix section. Appendices: 
+However, some general rules apply to the appendix section. Appendices: 
 
 1. Appear the end of the document, often after references; 
 
@@ -718,11 +717,11 @@ puffins_t <- puffins_t %>%
 ```
 ````
 
-*Note: `include=F` in the `{}` makes sure that neither code chunk nor output are shown in the pdf output.*
+*Note: `include=F` in the `{}` makes sure that neither code chunk nor output is shown in the pdf output.*
 
 If you have never used the `tidyverse` package before don't worry - it is not part of the learning objectives for this tutorial. If you want to learn about the Tidyverse, do this <a href="https://ourcodingclub.github.io/2017/03/20/seecc.html" target="____blank">Coding Club tutorial</a>.
 
-Now, the data set is almost presentable and ready to be inserted in a table. There are still other details, like number of decimals to be fixed, that `knitr::kable()` function helps fixing.
+Now, the data set is almost presentable and ready to be inserted into a table. There are still other details, like the number of decimals to be fixed, that `knitr::kable()` function helps to fix.
 
 `kableExtra` is a package that uses `kable()` and *pipes* from the `Tidyverse` package, to build complex and professional tables. We are going to use one example for the sake of this tutorial, but if you wish to explore further on the large variety of features that kableExtra can offer, have a look at its <a href="https://cran.r-project.org/web/packages/kableExtra/kableExtra.pdf" target="____blank">manual</a>. Moreover, kableExtra is often combined with `viridisLite` package, for using smoother <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html" target="____blank">colour scales</a>.
 
@@ -743,15 +742,15 @@ You can notice that the table has now appeared after the chunk and in the 'Viewe
 
 ![appendixA_table](https://user-images.githubusercontent.com/43357858/111608223-43cb9300-87d9-11eb-8251-33ad959862b9.jpg)
 
-**REMEMBER: the tables output in Rstudio Viewer are in html format. This means that on pdf will have a slightly different look, particularly when it comes to colours chosen. Make sure you specify these colors and check the output (kableExtra was initially made for hmtl, not pdf outputs).**
+**REMEMBER: the output of the table in Rstudio Viewer is in HTML format. This means that on pdf will have a slightly different look, particularly when it comes to colours chosen. Make sure you specify these colours and check the output (kableExtra was initially made for HTML, not pdf outputs).**
 
 Moving on to **Appendix B: additional figures**. We are going to use the same data on the Atlantic Puffins. 
 
 As we did for the table, we could output our figure by coding directly inside the code chunk, and specifying **include = F** in the code chunk options, to only display the figure and not the code that generated it, in the pdf. 
 
-Otherwise, **knitr** package provides us with options to add pre-saved figures. We've already used this function when adding the university logo in our main page. 
+Otherwise, the **knitr** package provides us with options to add pre-saved figures. We've already used this function when adding the university logo to our main page. 
 
-As an example, we are displaying mean temperature change between 1979 and 2008 in Norway. 
+As an example, we are displaying the mean temperature change between 1979 and 2008 in Norway. 
 
 ~~~~
 ```{r path-to-folder plots fixed size, echo = FALSE, out.height="40%", fig.show='hold', fig.align="center",  fig.cap="Additional images in Appendix B"}
@@ -783,9 +782,9 @@ As you can see, we are leaving the code chunk empty, and writing exclusively wit
 ```
 ~~~~
 
-The function `all_labels()` from **knitr** returns a vector of **all chunk labels** in the document you're working on (in this case, the appendix itself). The function thus retrieves all the source code chunks to this particular code chunk. `Echo = True` will show the source code inside this code chunk, which is equivalent to the source code from the **entire document**. `Eval = False` will not evaluate the code chunk as it all the code has been executed before.  
+The function `all_labels()` from **knitr** returns a vector of **all chunk labels** in the document you're working on (in this case, the appendix itself). The function thus retrieves all the source code chunks to this particular code chunk. `Echo = True` will show the source code inside this code chunk, which is equivalent to the source code from the **entire document**. `Eval = False` will not evaluate the code chunk as all the code has been executed before.  
 
-A list of code lines should appear within the code chunk and it corresponds to the code we have just written in appendix.Rmd!
+A list of code lines should appear within the code chunk and it corresponds to the code we have just written in the appendix.Rmd!
 
 By **code chunk label** we mean the custom names that you can give the code chunk, to be differentiated from the others so you can more easily recognise it and its source code. Not only that, considering that all_labels() takes **all** labels and so all code chunks, it might be useful to exclude some which are not going to be necessary, like the setup label present at the top of your main.Rmd.
 
@@ -814,7 +813,7 @@ Here you can see how it's written in Rstudio...
 
 ## 5. Let's Merge! 
 
-Make sure **that all the text we've written so far is spelled correctly**, and be ready to **knit the main document**!
+Make sure **that all the text we've written so far is spelt correctly**, and be ready to **knit the main document**!
 
 Now you can fill the sections in with your own content and your personal touch. 
 
@@ -824,25 +823,25 @@ In the meantime, [this](/output/output.pdf) is what your output should look like
 
 ## 6. Final tips. 
 
-Here are some final tips which I found to be **essential** when I wrote my own dissertation on Rmarkdown. 
+Here are some final tips which I found to be **essential** when I wrote my dissertation on Rmarkdown. 
 
-1. I have not talked about in detail in this tutorial, but the **Abbreviations** section (it comes **after the TOC and acknowledgments**) can be very useful in your dissertation if you need to talk about many variables and features and need a way to speed things up (and save word count); 
+1. I have not talked about it in detail in this tutorial, but the **Abbreviations** section (it comes **after the TOC and acknowledgements**) can be very useful in your dissertation if you need to talk about many variables and features and need a way to speed things up (and save word count); 
 
-2. I also have not talked about this topic in  this tutorial, but **writing mathematical formulas or equations** can be an important part of your work, especially when you are writing a dissertation that has a scientific purpose! If you need to write **mathematical formulas or equations**, I suggest you check out this [link](https://bookdown.org/yihui/bookdown/markdown-syntax.html#math-expressions) on *math expressions* and [this one](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations) on *markdown extensions to support math equations*. Here is a [list of LaTex mathematical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols) for you to explore, and here is a link to [convert models to general equations](https://bookdown.org/yihui/rmarkdown-cookbook/equatiomatic.html);
+2. I also have not talked about this topic in this tutorial, but **writing mathematical formulas or equations** can be an important part of your work, especially when you are writing a dissertation that has a scientific purpose! If you need to write **mathematical formulas or equations**, I suggest you check out this [link](https://bookdown.org/yihui/bookdown/markdown-syntax.html#math-expressions) on *math expressions* and [this one](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations) on *markdown extensions to support math equations*. Here is a [list of LaTex mathematical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols) for you to explore, and here is a link to [convert models to general equations](https://bookdown.org/yihui/rmarkdown-cookbook/equatiomatic.html);
 
 3. Make sure you have [TinyTex](https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html) installed to be able to **create pdf documents from rmarkdown**. Without it, it just won't work. Remember that TinyTex is sufficient and is the best distribution for us R users;
 
 4. **NEVER** write your content directly onto Rmarkdown! As much as it might seem faster, Rmarkdown does not provide a spell checker by default, and you might take longer than expected in ultimating and finalising your drafts. **Plan the structure, the code that you want to include, the layout of each section to be written on Rmd**, but **always** have the text saved and written on a word document first. It is much easier and quicker to paste in your content, once you're 100% sure it is ready for submission; 
 
-5. **Before** knitting the main document, have a look at it, once, twice, three, four times... and more! This document will present many sections, and the smallest spelling mistake might crash your whole work. Since it's going to be a large document, knit it a few times, only when necessary, and definitely when you're sure to be priniting your final pdf; 
+5. **Before** knitting the main document, have a look at it, once, twice, three, four times... and more! This document will present many sections, and the smallest spelling mistake might crash your whole work. Since it's going to be a large document, knit it a few times, only when necessary, and definitely when you're sure to be printing your final pdf; 
 
-6. **Don't submit last minute!!!** This rule would apply to any submission scenario, really. However, take your time to check for errors and debugging, if need be. You don't want to find yourself at the end with errors that won't allow you knit your pdf and submit your work on time. 
+6. **Don't submit last minute!!!** This rule would apply to any submission scenario. However, take your time to check for errors and debugging, if need be. You don't want to find yourself at the end with errors that won't allow you to knit your pdf and submit your work on time. 
 
 
 You can check out my dissertation written in Rmarkdown by [clicking here](https://github.com/AnnaChirumbolo/Dissertation/blob/master/AnnaChirumbolo_dissertation.pdf).
 
 
-Thank you for following this tutorial, I hope it has helped you with creating a nice and professional template for writing your work. **Good luck** with your submission and **congratualations** for completing your studies!
+Thank you for following this tutorial, I hope it has helped you with creating a nice and professional template for writing your work. **Good luck** with your submission and **congratulations** for completing your studies!
 
 
 ## Resources 
